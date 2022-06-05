@@ -4,6 +4,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
 
 import './css/index.css';
+import "bulma/css/bulma.min.css";
 
 import App from './App';
 

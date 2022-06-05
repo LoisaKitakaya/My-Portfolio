@@ -2,6 +2,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import { Routes, Route } from "react-router-dom";
 
 import "./css/App.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 import Home from './components/Home';
 import Articles from './components/Articles'
