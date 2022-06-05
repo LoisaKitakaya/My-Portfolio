@@ -23,10 +23,10 @@ function App() {
         {/* routes */}
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="articles" element={<Articles />} />
-          <Route path="articles/:slug" element={<OpenArticle />} />
-          <Route path="projects" element={<Projects />} />
-          <Route path="about" element={<About />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/article/:slug" element={<OpenArticle />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/about" element={<About />} />
         </Routes>
         {/* routes */}
       </div>

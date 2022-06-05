@@ -57,17 +57,17 @@ const OpenArticle = () => {
   //   );
 
   return (
-    <div className="Articles">
+    <div>
       {/* navigation */}
       <Navbar />
       {/* navigation */}
-
+      <br />
       {/* app child */}
-      <div className="Articles-child">
+      <div className="Articles">
         <h1>Articles page | Slug: {slug.slug}.</h1>
       </div>
       {/* app child */}
-
+      <br />
       {/* footer */}
       <Footer />
       {/* footer */}

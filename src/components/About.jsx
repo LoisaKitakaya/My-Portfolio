@@ -50,13 +50,13 @@ const About = () => {
   //   );
 
   return (
-    <div className="About">
+    <div>
       {/* navigation */}
       <Navbar />
       {/* navigation */}
 
       {/* app child */}
-      <div className="About-child">
+      <div className="About">
         <h1>About page</h1>
       </div>
       {/* app child */}

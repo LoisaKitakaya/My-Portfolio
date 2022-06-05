@@ -53,13 +53,13 @@ const Projects = () => {
   //   );
 
   return (
-    <div className="Projects">
+    <div>
       {/* navigation */}
       <Navbar />
       {/* navigation */}
 
       {/* app child */}
-      <div className="Projects-child">
+      <div className="Projects">
         <h1>Projects page</h1>
       </div>
       {/* app child */}
