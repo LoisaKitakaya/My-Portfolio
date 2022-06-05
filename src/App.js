@@ -4,11 +4,12 @@ import { Routes, Route } from "react-router-dom";
 import "./css/App.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-import Home from './components/Home';
-import Articles from './components/Articles'
-import OpenArticle from './components/OpenArticle'
-import Projects from './components/Projects'
-import About from './components/About'
+import Home from './pages/Home';
+import Articles from './pages/Articles'
+import OpenArticle from './pages/OpenArticle'
+import Projects from './pages/Projects'
+import About from './pages/About'
+import Tags from "./pages/Tags";
 
 
 const client = new ApolloClient({
@@ -25,6 +26,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/article/:slug" element={<OpenArticle />} />
+          <Route path="/tags/:tag" element={<Tags/>}></Route>
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
         </Routes>

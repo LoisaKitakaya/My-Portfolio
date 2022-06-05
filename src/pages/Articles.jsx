@@ -71,7 +71,7 @@ const Articles = () => {
             <thead>
               <tr>
                 <th>
-                  <p className="has-text-theme is-size-3">All articles</p>
+                  <p className="has-text-theme is-size-3">Have a read</p>
                 </th>
                 <th></th>
               </tr>
