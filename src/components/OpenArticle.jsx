@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import { Link } from "react-router-dom";
+import { useQuery, gql } from "@apollo/client";
 
 import loader from "../assets/my-loader.svg";
 
@@ -8,51 +8,53 @@ import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
 import PageTitle from "../PageTitle";
 
+const THIS_ARTICLE = gql`
+  query Article($slug: String!) {
+    post(where: { slug: $slug }) {
+      id
+      title
+      content
+      tags
+      date
+      authors {
+        id
+        name
+      }
+    }
+  }
+`;
+
 const OpenArticle = () => {
-  PageTitle("Loisa | Article"); 
-    
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState();
-
-  const [article, setArticle] = useState([]);
-
   const slug = useParams();
 
-  const fetchArticle = async () => {
-    setLoading(true);
+  PageTitle(`Article | ${slug.slug}`);
 
-    
+  // const { loading, error, data } = useQuery(THIS_ARTICLE, {
+  //   variables: { slug: slug.slug },
+  // });
+  // console.log(data);
 
-    setLoading(false);
-  };
+  // if (loading)
+  //   return (
+  //     <div className="App">
+  //       <div className="is-loading">
+  //         <img src={loader} alt="Loading..."></img>
+  //         <br />
+  //         <p className="is-size-4">Loading....</p>
+  //       </div>
+  //     </div>
+  //   );
 
-  useEffect(() => {
-    fetchArticle();
-  });
-
-  if (loading) {
-    return (
-      <div className="App">
-        <div className="is-loading">
-          <img src={loader} alt="Loading..."></img>
-          <br />
-          <p className="is-size-4">Loading....</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (error || !Array.isArray(article)) {
-    return (
-      <div className="App">
-        <div className="is-error">
-          <p className="is-size-4">
-            Something went wrong. Could not fetch data.
-          </p>
-        </div>
-      </div>
-    );
-  }
+  // if (error)
+  //   return (
+  //     <div className="App">
+  //       <div className="is-error">
+  //         <p className="is-size-4">
+  //           Something went wrong. Could not fetch data.
+  //         </p>
+  //       </div>
+  //     </div>
+  //   );
 
   return (
     <div className="Articles">

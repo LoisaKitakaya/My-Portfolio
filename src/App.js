@@ -1,7 +1,14 @@
-import "./css/App.css";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { Routes, Route } from "react-router-dom";
 
-import Testing from "./components/Testing";
+import "./css/App.css";
+
+import Home from './components/Home';
+import Articles from './components/Articles'
+import OpenArticle from './components/OpenArticle'
+import Projects from './components/Projects'
+import About from './components/About'
+
 
 const client = new ApolloClient({
   uri: "https://api-eu-central-1.graphcms.com/v2/cl3tlp7kmbvt801z101bc5db3/master",
@@ -12,7 +19,15 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div className="App">
-        <Testing />
+        {/* routes */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="articles" element={<Articles />} />
+          <Route path="articles/:slug" element={<OpenArticle />} />
+          <Route path="projects" element={<Projects />} />
+          <Route path="about" element={<About />} />
+        </Routes>
+        {/* routes */}
       </div>
     </ApolloProvider>
   );
