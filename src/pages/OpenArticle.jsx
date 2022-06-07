@@ -65,7 +65,7 @@ const OpenArticle = () => {
       <br />
       {/* app child */}
       <div className="Articles">
-        <div className="card">
+        <div className="card article-card">
           <div className="card-image">
             <figure className="image is-3by1">
               <img src={data.post.coverImage.url} alt="" />
@@ -91,20 +91,26 @@ const OpenArticle = () => {
               </p>
               <div className="tags">
                 <p>Tags:</p>
-                <Link to={"/tags"} className="tag-links has-text-light">
+                <button className="tag-links button has-text-light">
                   {data.post.tags[0]}
-                </Link>
-                <Link to={"/tags"} className="tag-links has-text-light">
+                </button>
+                <button className="tag-links button has-text-light">
                   {data.post.tags[1]}
-                </Link>
-                <Link to={"/tags"} className="tag-links has-text-light">
+                </button>
+                <button className="tag-links button has-text-light">
                   {data.post.tags[2]}
-                </Link>
+                </button>
               </div>
             </div>
           </div>
         </div>
-        <Comments/>
+        <br />
+        <hr className="footer-divider" />
+        <p className="is-size-3 has-text-theme has-text-centered">Comments</p>
+        <br />
+        <hr className="footer-divider" />
+        <br />
+        <Comments />
       </div>
       {/* app child */}
       <br />

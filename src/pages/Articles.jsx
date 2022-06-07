@@ -57,7 +57,7 @@ const Articles = () => {
         {/* title */}
         <div className="page-title has-text-centered">
           <p className="is-size-1 has-text-theme">Articles</p>
-          <p className="is-size-5">
+          <p className="is-size-5 muted">
             Tutorials, technical articles, snippets, reference materials,
             development-related resources as well as other non-programming
             topics I've written about.

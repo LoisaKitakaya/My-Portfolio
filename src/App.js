@@ -9,7 +9,6 @@ import Articles from './pages/Articles'
 import OpenArticle from './pages/OpenArticle'
 import Projects from './pages/Projects'
 import About from './pages/About'
-import Tags from "./pages/Tags";
 
 
 const client = new ApolloClient({
@@ -26,7 +25,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/article/:slug" element={<OpenArticle />} />
-          <Route path="/tags/:tag" element={<Tags/>}></Route>
           <Route path="/projects" element={<Projects />} />
           <Route path="/about" element={<About />} />
         </Routes>
