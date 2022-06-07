@@ -22,7 +22,7 @@ const About = () => {
             Software engineer, open-sourcerer, and best jungler in {""}{" "}
             <a
               href="https://www.arenaofvalor.com/"
-              className="has-text-grey is-underlined"
+              className="has-text-grey-light custom-links is-underlined"
             >
               Arena of Valor
             </a>{" "}
@@ -52,13 +52,19 @@ const About = () => {
           <br />
           <p>
             Check out the {""}{" "}
-            <Link className="has-text-theme is-underlined" to={"/projects"}>
+            <Link
+              className="has-text-light custom-links is-underlined"
+              to={"/projects"}
+            >
               projects
             </Link>{" "}
             {""} page to see a highlight of the open-source projects I've made,
             and
             {""}{" "}
-            <Link className="has-text-theme is-underlined" to={"/articles"}>
+            <Link
+              className="has-text-light custom-links is-underlined"
+              to={"/articles"}
+            >
               articles
             </Link>{" "}
             {""} to see everything I've written.
@@ -77,7 +83,7 @@ const About = () => {
               Dominating on {""}{" "}
               <a
                 href="https://www.arenaofvalor.com/"
-                className="has-text-light is-underlined"
+                className="has-text-light custom-links is-underlined"
               >
                 Arena of Valor
               </a>{" "}
@@ -99,7 +105,7 @@ const About = () => {
             <li>
               <a
                 href="https://github.com/LoisaKitakaya"
-                className="has-text-light is-underlined"
+                className="has-text-light custom-links is-underlined"
               >
                 GitHub
               </a>
@@ -107,9 +113,25 @@ const About = () => {
             <li>
               <a
                 href="https://twitter.com/FreedomLoisa"
-                className="has-text-light is-underlined"
+                className="has-text-light custom-links is-underlined"
               >
                 Twitter
+              </a>
+            </li>
+          </ul>
+
+          <hr className="footer-divider" />
+          <br />
+
+          <p className="is-size-4 has-text-theme">Misc</p>
+          <p>Looking for a developer?</p>
+          <ul className="about-list">
+            <li>
+              <a
+                href="https://res.cloudinary.com/dit0fii18/image/upload/v1654616679/Documents/Resume_-_Freedom_Loisa_fszpma.pdf"
+                className="has-text-light custom-links is-underlined"
+              >
+                Resume
               </a>
             </li>
           </ul>

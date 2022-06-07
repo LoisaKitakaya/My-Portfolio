@@ -74,8 +74,6 @@
 }
 
 .latest-articles {
-  width: 93%;
-  margin: auto;
   padding-top: 8rem;
 }
 
@@ -120,7 +118,6 @@ tbody tr {
 
 tbody tr:hover {
   background-color: #1d1e23;
-  cursor: pointer;
 }
 
 .card {

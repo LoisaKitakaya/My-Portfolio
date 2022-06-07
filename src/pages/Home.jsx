@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 
 import loader from "../assets/my-loader.svg";
-import me from "../assets/me.png";
+import me from "../assets/me.jpg";
 
 import Navbar from "../layout/Navbar";
 import Footer from "../layout/Footer";
@@ -23,7 +23,7 @@ const Home = () => {
   PageTitle("Loisa | Home");
 
   const { loading, error, data } = useQuery(POSTS_QUERY);
-  console.log(data);
+  // console.log(data);
 
   if (loading)
     return (
@@ -69,7 +69,7 @@ const Home = () => {
             <br />
             <Link
               to={"/about"}
-              className="has-text-grey is-size-4 is-underlined"
+              className="has-text-grey-light custom-links is-size-4 is-underlined"
             >
               More about me <i className="bi bi-arrow-right-short"></i>
             </Link>
@@ -102,19 +102,20 @@ const Home = () => {
               {data.posts.map((article) => {
                 const list = (
                   <>
-                    <tr key={article.id}>
-                      <td>
-                        <Link
-                          to={`/article/${article.slug}`}
-                          className="has-text-light is-size-5"
-                        >
-                          {article.title}
-                        </Link>
-                      </td>
-                      <td>
-                        <p>{article.date}</p>
-                      </td>
-                    </tr>
+                    <Link
+                      to={`/article/${article.slug}`}
+                      key={article.id}
+                      className="has-text-light"
+                    >
+                      <tr>
+                        <td>
+                          <p className="is-size-5">{article.title}</p>
+                        </td>
+                        <td>
+                          <p>{article.date}</p>
+                        </td>
+                      </tr>
+                    </Link>
                   </>
                 );
 

@@ -25,7 +25,7 @@ const Projects = () => {
   PageTitle("Loisa | Projects");
 
   const { loading, error, data } = useQuery(ALL_PROJECTS);
-  console.log(data);
+  // console.log(data);
 
   if (loading)
     return (
@@ -79,9 +79,9 @@ const Projects = () => {
           {data.projects.map((project, index) => {
             const list = (
               <>
-                <div class="card project-cards" key={index}>
-                  <div class="card-image">
-                    <figure class="image is-5by3">
+                <div className="card project-cards" key={index}>
+                  <div className="card-image">
+                    <figure className="image is-5by3">
                       {project.image.map((img, index) => {
                         const list = (
                           <>
@@ -93,23 +93,23 @@ const Projects = () => {
                       })}
                     </figure>
                   </div>
-                  <div class="card-content project-content">
+                  <div className="card-content project-content">
                     <p className="is-size-3 has-text-centered is-underlined">
                       {project.name}
                     </p>
                     <br />
                     <p className="has-text-centered">{project.description}</p>
                   </div>
-                  <footer class="card-footer">
+                  <footer className="card-footer">
                     <a
                       href={project.sourceCode}
-                      class="card-footer-item has-text-theme"
+                      className="card-footer-item has-text-light custom-links"
                     >
                       Source
                     </a>
                     <a
                       href={project.demo}
-                      class="card-footer-item has-text-theme"
+                      className="card-footer-item has-text-light custom-links"
                     >
                       Demo
                     </a>

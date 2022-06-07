@@ -33,7 +33,7 @@ const OpenArticle = () => {
   const { loading, error, data } = useQuery(THIS_ARTICLE, {
     variables: { slug: slug.slug },
   });
-  console.log(data);
+  // console.log(data);
 
   if (loading)
     return (
@@ -107,7 +107,6 @@ const OpenArticle = () => {
         <br />
         <hr className="footer-divider" />
         <p className="is-size-3 has-text-theme has-text-centered">Comments</p>
-        <br />
         <hr className="footer-divider" />
         <br />
         <Comments />

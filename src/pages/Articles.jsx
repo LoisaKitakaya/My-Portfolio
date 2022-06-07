@@ -22,7 +22,7 @@ const Articles = () => {
   PageTitle("Loisa | Articles");
 
   const { loading, error, data } = useQuery(ALL_POSTS);
-  console.log(data);
+  // console.log(data);
 
   if (loading)
     return (
@@ -81,19 +81,20 @@ const Articles = () => {
               {data.posts.map((article) => {
                 const list = (
                   <>
-                    <tr key={article.id}>
-                      <td>
-                        <Link
-                          to={`/article/${article.slug}`}
-                          className="has-text-light is-size-5"
-                        >
-                          {article.title}
-                        </Link>
-                      </td>
-                      <td>
-                        <p>{article.date}</p>
-                      </td>
-                    </tr>
+                    <Link
+                      to={`/article/${article.slug}`}
+                      key={article.id}
+                      className="has-text-light"
+                    >
+                      <tr>
+                        <td>
+                          <p className="is-size-5">{article.title}</p>
+                        </td>
+                        <td>
+                          <p>{article.date}</p>
+                        </td>
+                      </tr>
+                    </Link>
                   </>
                 );
 
