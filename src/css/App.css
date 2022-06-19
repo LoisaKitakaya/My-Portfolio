@@ -51,6 +51,11 @@
   height: 1px;
 }
 
+.article-divider {
+  background-color: #282c35;
+  height: 1px;
+}
+
 .Home,
 .Articles,
 .Projects,
@@ -130,7 +135,12 @@ tbody tr:hover {
 }
 
 .article-card {
-  background-color: #1d1e23;
+  background-color: #a1a1a1;
+}
+
+.article-card .content {
+  font-size: 19px;
+  color: #1d1e23 !important;
 }
 
 .outro,

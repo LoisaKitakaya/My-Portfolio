@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+// import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 
 import loader from "../assets/my-loader.svg";
 
@@ -18,9 +18,11 @@ const THIS_ARTICLE = gql`
       coverImage {
         url
       }
-      content
       tags
       date
+      content {
+        html
+      }
     }
   }
 `;
@@ -72,13 +74,14 @@ const OpenArticle = () => {
             </figure>
           </div>
           <div className="card-content">
-            <p className="is-size-2 has-text-centered">{data.post.title}</p>
+            <p className="is-size-2 has-text-centered has-text-dark">{data.post.title}</p>
+            <hr className="article-divider" />
+            {/* <div className="content">
+              <ReactMarkdown>{data.post.content.markdown}</ReactMarkdown>
+            </div> */}
+            <div className="content" dangerouslySetInnerHTML={{__html: data.post.content.html}}/>
             <hr className="footer-divider" />
-            <div className="content is-size-5">
-              <ReactMarkdown>{data.post.content}</ReactMarkdown>
-            </div>
-            <hr className="footer-divider" />
-            <div className="outro">
+            <div className="outro has-text-dark">
               <p>
                 Written by{" "}
                 <Link
