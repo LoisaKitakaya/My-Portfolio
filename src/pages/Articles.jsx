@@ -9,7 +9,7 @@ import PageTitle from "../PageTitle";
 
 const ALL_POSTS = gql`
   query AllPosts {
-    posts {
+    posts(orderBy: date_DESC) {
       id
       title
       slug

@@ -69,17 +69,22 @@ const OpenArticle = () => {
       <div className="Articles">
         <div className="card article-card">
           <div className="card-image">
-            <figure className="image is-3by1">
+            <figure className="image is-2by1">
               <img src={data.post.coverImage.url} alt="" />
             </figure>
           </div>
           <div className="card-content">
-            <p className="is-size-2 has-text-centered has-text-dark">{data.post.title}</p>
+            <p className="is-size-2 has-text-centered has-text-dark">
+              {data.post.title}
+            </p>
             <hr className="article-divider" />
             {/* <div className="content">
               <ReactMarkdown>{data.post.content.markdown}</ReactMarkdown>
             </div> */}
-            <div className="content" dangerouslySetInnerHTML={{__html: data.post.content.html}}/>
+            <div
+              className="content"
+              dangerouslySetInnerHTML={{ __html: data.post.content.html }}
+            />
             <hr className="footer-divider" />
             <div className="outro has-text-dark">
               <p>
@@ -94,13 +99,13 @@ const OpenArticle = () => {
               </p>
               <div className="tags">
                 <p>Tags:</p>
-                <button className="tag-links button has-text-light">
+                <button className="tag-links button has-text-dark">
                   {data.post.tags[0]}
                 </button>
-                <button className="tag-links button has-text-light">
+                <button className="tag-links button has-text-dark">
                   {data.post.tags[1]}
                 </button>
-                <button className="tag-links button has-text-light">
+                <button className="tag-links button has-text-dark">
                   {data.post.tags[2]}
                 </button>
               </div>

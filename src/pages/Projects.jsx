@@ -8,7 +8,7 @@ import PageTitle from "../PageTitle";
 
 const ALL_PROJECTS = gql`
   query Projects {
-    projects {
+    projects(orderBy: id_DESC) {
       id
       name
       description

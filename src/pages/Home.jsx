@@ -10,7 +10,7 @@ import PageTitle from "../PageTitle";
 
 const POSTS_QUERY = gql`
   query HomePosts {
-    posts(first: 10) {
+    posts(first: 10, orderBy: date_DESC) {
       id
       title
       slug
