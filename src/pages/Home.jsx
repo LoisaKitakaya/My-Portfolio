@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 
 import loader from "../assets/my-loader.svg";
@@ -67,12 +66,12 @@ const Home = () => {
               over the years.
             </p>
             <br />
-            <Link
-              to={"/about"}
+            <a
+              href={"/about"}
               className="has-text-grey-light custom-links is-size-4 is-underlined"
             >
               More about me <i className="bi bi-arrow-right-short"></i>
-            </Link>
+            </a>
           </div>
           <div className="intro-image">
             <img src={me} alt="Loisa" />
