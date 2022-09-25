@@ -142,7 +142,7 @@ const About = () => {
           <ul className="about-list">
             <li>
               <a
-                href="https://res.cloudinary.com/dit0fii18/image/upload/v1654616679/Documents/Resume_-_Freedom_Loisa_fszpma.pdf"
+                href="https://res.cloudinary.com/dit0fii18/image/upload/v1664124091/documents/Resume_-_Freedom_Loisa_w3xg3a.pdf"
                 className="has-text-light custom-links is-underlined"
               >
                 Resume
