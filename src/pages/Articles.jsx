@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
 
 import loader from "../assets/my-loader.svg";
@@ -81,8 +80,8 @@ const Articles = () => {
               {data.posts.map((article) => {
                 const list = (
                   <>
-                    <Link
-                      to={`/article/${article.slug}`}
+                    <a
+                      href={`/article/${article.slug}`}
                       key={article.id}
                       className="has-text-light"
                     >
@@ -94,7 +93,7 @@ const Articles = () => {
                           <p>{article.date}</p>
                         </td>
                       </tr>
-                    </Link>
+                    </a>
                   </>
                 );
 

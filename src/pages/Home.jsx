@@ -88,12 +88,12 @@ const Home = () => {
                   <p className="has-text-theme is-size-3">Latest articles</p>
                 </th>
                 <th>
-                  <Link
-                    to="/articles"
+                  <a
+                    href={"/articles"}
                     className="has-text-light custom-links is-size-5"
                   >
                     view all
-                  </Link>
+                  </a>
                 </th>
               </tr>
             </thead>
@@ -102,8 +102,8 @@ const Home = () => {
               {data.posts.map((article) => {
                 const list = (
                   <>
-                    <Link
-                      to={`/article/${article.slug}`}
+                    <a
+                      href={`/article/${article.slug}`}
                       key={article.id}
                       className="has-text-light"
                     >
@@ -115,7 +115,7 @@ const Home = () => {
                           <p>{article.date}</p>
                         </td>
                       </tr>
-                    </Link>
+                    </a>
                   </>
                 );
 
