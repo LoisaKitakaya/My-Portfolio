@@ -20,6 +20,13 @@ const Footer = () => {
           >
             <i className="bi bi-twitter nav-icon has-text-info"></i> Twitter
           </a>
+          <a
+            href="https://wa.me/254725131828"
+            className="has-text-light social"
+          >
+            <i className="bi bi-whatsapp nav-icon has-text-success"></i>{" "}
+            Whatsapp
+          </a>
         </div>
       </div>
     </footer>
