@@ -94,10 +94,15 @@ const About = () => {
           <br />
 
           <p className="is-size-4 has-text-theme">Connect</p>
-          <p className="muted is-size-6">Open for employment</p>
           <p>
-            You can contact me by email at kitakayaloisa@gmail.com to say hi! I
-            always appreciate meeting new people.
+            You can contact me by email at{" "}
+            <a
+              href="mailto:kitakayaloisa@gmail.com"
+              className="has-text-light custom-links is-underlined"
+            >
+              kitakayaloisa@gmail.com
+            </a>{" "}
+            to say hi! I always appreciate meeting new people.
           </p>
           <p>or:</p>
           <br />
@@ -118,12 +123,21 @@ const About = () => {
                 Twitter
               </a>
             </li>
+            <li>
+              <a
+                href="https://wa.me/254725131828"
+                className="has-text-light custom-links is-underlined"
+              >
+                Whatsapp
+              </a>
+            </li>
           </ul>
 
           <hr className="footer-divider" />
           <br />
 
           <p className="is-size-4 has-text-theme">Misc</p>
+          <p className="muted is-size-6">Open for employment</p>
           <p>Looking for a developer?</p>
           <ul className="about-list">
             <li>
