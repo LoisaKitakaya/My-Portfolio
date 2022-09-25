@@ -5,7 +5,7 @@ import Footer from "../layout/Footer";
 import PageTitle from "../PageTitle";
 
 const About = () => {
-  PageTitle("Loisa | About");
+  PageTitle("About");
 
   return (
     <div>

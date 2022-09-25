@@ -30,7 +30,7 @@ const THIS_ARTICLE = gql`
 const OpenArticle = () => {
   const slug = useParams();
 
-  PageTitle(`Article | ${slug.slug}`);
+  PageTitle(`${slug.slug}`);
 
   const { loading, error, data } = useQuery(THIS_ARTICLE, {
     variables: { slug: slug.slug },

@@ -20,7 +20,7 @@ const POSTS_QUERY = gql`
 `;
 
 const Home = () => {
-  PageTitle("Loisa | Home");
+  PageTitle("Home");
 
   const { loading, error, data } = useQuery(POSTS_QUERY);
   // console.log(data);

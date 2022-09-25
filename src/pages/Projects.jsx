@@ -22,7 +22,7 @@ const ALL_PROJECTS = gql`
 `;
 
 const Projects = () => {
-  PageTitle("Loisa | Projects");
+  PageTitle("Projects");
 
   const { loading, error, data } = useQuery(ALL_PROJECTS);
   // console.log(data);

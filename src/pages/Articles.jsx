@@ -19,7 +19,7 @@ const ALL_POSTS = gql`
 `;
 
 const Articles = () => {
-  PageTitle("Loisa | Articles");
+  PageTitle("Articles");
 
   const { loading, error, data } = useQuery(ALL_POSTS);
   // console.log(data);
