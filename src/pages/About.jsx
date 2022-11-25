@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
 
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import myInfo from "../data/about.json";
 
@@ -20,7 +20,7 @@ const About = () => {
   const stack = myInfo.stack;
 
   return (
-    <div className="h-screen">
+    <div className="min-h-screen">
       <div className="mx-16 p-4">
         {/* navbar */}
         <Navbar navs={navs} />
@@ -29,8 +29,6 @@ const About = () => {
         <hr className="border-1 border-zinc-500 my-4" />
 
         {/* body */}
-
-        {/* intro */}
         <div className="flex justify-between ml-8">
           <div>
             <h4 className="text-4xl mb-8">About me</h4>
@@ -217,8 +215,6 @@ const About = () => {
             })}
           </div>
         </div>
-        {/* intro */}
-
         {/* body */}
 
         <hr className="border-1 border-zinc-500 my-4" />
