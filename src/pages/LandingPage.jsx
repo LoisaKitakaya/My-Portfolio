@@ -40,7 +40,32 @@ const LandingPage = () => {
           </svg>
         </Link>
         <Link
-          to="/"
+          to="/stats"
+          className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center"
+        >
+          <span className="text-lg text-zinc-600">Git stats</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="w-5 h-5 mx-1 text-teal-600"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z"
+            />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z"
+            />
+          </svg>
+        </Link>
+        <Link
+          to="/blog"
           className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center"
         >
           <span className="text-lg text-zinc-600">Blog</span>
@@ -60,7 +85,7 @@ const LandingPage = () => {
           </svg>
         </Link>
         <Link
-          to="/"
+          to="/projects"
           className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center"
         >
           <span className="text-lg text-zinc-600">Projects</span>
@@ -80,7 +105,7 @@ const LandingPage = () => {
           </svg>
         </Link>
         <Link
-          to="/"
+          to="/contact"
           className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center"
         >
           <span className="text-lg text-zinc-600">Contact</span>
