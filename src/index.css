@@ -6,5 +6,25 @@
 
 body {
   background-color: #eaf4f9;
-background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.11' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23000000' fill-opacity='0.11' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+html::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  background: rgb(179, 177, 177) !important;
+}
+
+html::-webkit-scrollbar-thumb {
+  background: rgb(136, 136, 136) !important;
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: rgb(100, 100, 100) !important;
+}
+
+html::-webkit-scrollbar-thumb:active {
+  background: rgb(68, 68, 68) !important;
 }
