@@ -1,161 +1,232 @@
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
-import Navbar from "../layout/Navbar";
-import Footer from "../layout/Footer";
-import PageTitle from "../PageTitle";
+import Navbar from "../components/Navbar";
+import myInfo from "../data/about.json";
 
 const About = () => {
-  PageTitle("About");
+  const navs = [
+    { title: "Home", href: "/" },
+    { title: "About", href: "" },
+  ].map((item, index) => (
+    <Link to={item.href} key={index}>
+      {item.title}
+    </Link>
+  ));
+
+  const about = myInfo.about_me;
+  const doingNow = myInfo.what_im_doing_now;
+  const facts = myInfo.random_facts;
+  const stack = myInfo.stack;
 
   return (
-    <div>
-      {/* navigation */}
-      <Navbar />
-      {/* navigation */}
-      <br />
-      {/* app child */}
-      <div className="About">
-        {/* title */}
-        <div className="page-title has-text-centered">
-          <p className="is-size-1 has-text-theme">About me</p>
-          <p className="is-size-5 muted">
-            Software engineer, open-sourcerer, and best jungler in {""}{" "}
+    <div className="h-screen">
+      <div className="mx-16 p-4">
+        {/* navbar */}
+        <Navbar navs={navs} />
+        {/* navbar */}
+
+        <hr className="border-1 border-zinc-500 my-4" />
+
+        {/* body */}
+
+        {/* intro */}
+        <div className="flex justify-between ml-8">
+          <div>
+            <h4 className="text-4xl mb-8">About me</h4>
+            {about.bio.map((item, index) => {
+              const list = (
+                <>
+                  <p key={index} className="text-lg mb-4">
+                    {item.paragraph}
+                  </p>
+                </>
+              );
+
+              return list;
+            })}
+            <h4 className="text-4xl mt-8 mb-8">What I'm currently doing</h4>
+            <p className="text-lg underline italic mb-4">
+              {doingNow.updated_date}
+            </p>
+            <p className="text-lg mb-8">{doingNow.content}</p>
+            <h4 className="text-4xl mb-8">My stacks as a developer</h4>
+            <p className="text-2xl ml-2 mb-4">Programming languages</p>
+            <ul className="ml-8 mb-8">
+              {stack.programming_languages.map((item, index) => {
+                const list = (
+                  <>
+                    <li
+                      key={index}
+                      className="text-lg mb-4"
+                      style={{
+                        listStyleType: "disc",
+                      }}
+                    >
+                      <a
+                        href={`${item.link}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-700"
+                      >
+                        {item.lang}
+                      </a>
+                    </li>
+                  </>
+                );
+
+                return list;
+              })}
+            </ul>
+            <p className="text-2xl ml-2 mb-4">
+              Frameworks (fullstack, backend, frontend)
+            </p>
+            <ul className="ml-8 mb-4">
+              {stack.frameworks.backend.map((item, index) => {
+                const list = (
+                  <>
+                    <li
+                      key={index}
+                      className="text-lg mb-4"
+                      style={{
+                        listStyleType: "disc",
+                      }}
+                    >
+                      <a
+                        href={`${item.link}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-700"
+                      >
+                        {item.lang}
+                      </a>
+                    </li>
+                  </>
+                );
+
+                return list;
+              })}
+            </ul>
+            <ul className="ml-8 mb-4">
+              {stack.frameworks.frontend.map((item, index) => {
+                const list = (
+                  <>
+                    <li
+                      key={index}
+                      className="text-lg mb-4"
+                      style={{
+                        listStyleType: "disc",
+                      }}
+                    >
+                      <a
+                        href={`${item.link}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-700"
+                      >
+                        {item.lang}
+                      </a>
+                    </li>
+                  </>
+                );
+
+                return list;
+              })}
+            </ul>
+            <p className="text-2xl ml-2 mb-4">Databases</p>
+            <ul className="ml-8 mb-8">
+              {stack.databases.map((item, index) => {
+                const list = (
+                  <>
+                    <li
+                      key={index}
+                      className="text-lg mb-4"
+                      style={{
+                        listStyleType: "disc",
+                      }}
+                    >
+                      <a
+                        href={`${item.link}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-700"
+                      >
+                        {item.db}
+                      </a>
+                    </li>
+                  </>
+                );
+
+                return list;
+              })}
+            </ul>
+            <h4 className="text-4xl mb-8">Random facts</h4>
+            <ul className="ml-8 mb-8">
+              {facts.map((item, index) => {
+                const list = (
+                  <>
+                    <li
+                      key={index}
+                      className="text-lg mb-4"
+                      style={{
+                        listStyleType: "disc",
+                      }}
+                    >
+                      {item.fact}
+                    </li>
+                  </>
+                );
+
+                return list;
+              })}
+            </ul>
+            <h4 className="text-4xl mb-4">Miscellaneous</h4>
             <a
-              href="https://www.arenaofvalor.com/"
-              className="has-text-grey-light custom-links is-underlined"
+              href="https://res.cloudinary.com/dit0fii18/image/upload/v1664124091/documents/Resume_-_Freedom_Loisa_w3xg3a.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-700 text-lg"
             >
-              Arena of Valor
-            </a>{" "}
-            | North Africa and Middle East server.
-          </p>
+              Resume
+            </a>
+          </div>
+          <div className="flex flex-col w-fit">
+            {about.images.map((pic, index) => {
+              const list = (
+                <>
+                  <div
+                    key={index}
+                    className="rounded-md shadow-md border border-zinc-200 border-1 mb-4 mx-auto"
+                    style={{
+                      width: "80%",
+                    }}
+                  >
+                    <img
+                      src={pic.image}
+                      alt="thumbnail"
+                      className="rounded-t-md"
+                    />
+                    <p className="p-4 bg-white rounded-b-md">
+                      {pic.description}
+                    </p>
+                  </div>
+                </>
+              );
+
+              return list;
+            })}
+          </div>
         </div>
+        {/* intro */}
 
-        <br />
-        <br />
-        <br />
-        <br />
+        {/* body */}
 
-        {/* about */}
-        <div className="about-container is-size-5">
-          <p>
-            Hey, my name is Freedom Loisa! I'm a software engineer based in
-            Nairobi, Kenya. Welcome to my spot on the web for projects I've
-            created, tutorials I've written, and anything else I want to show
-            the world.
-          </p>
-          <br />
-          <p>
-            My only motivation for this site is to share what I've learned with
-            the world and document notes for myself, and hopefully connect with
-            a few people.
-          </p>
-          <br />
-          <p>
-            Check out the {""}{" "}
-            <Link
-              className="has-text-light custom-links is-underlined"
-              to={"/projects"}
-            >
-              projects
-            </Link>{" "}
-            {""} page to see a highlight of the open-source projects I've made,
-            and
-            {""}{" "}
-            <Link
-              className="has-text-light custom-links is-underlined"
-              to={"/articles"}
-            >
-              articles
-            </Link>{" "}
-            {""} to see everything I've written.
-          </p>
+        <hr className="border-1 border-zinc-500 my-4" />
 
-          <hr className="footer-divider" />
-          <br />
-
-          <p className="is-size-4 has-text-theme">What I'm doing now</p>
-          <p className="muted is-size-6">Updated June 5, 2022</p>
-          <br />
-          <ul className="about-list">
-            <li>Freelancing as a web developer</li>
-            <li>writing about coding stuff</li>
-            <li>
-              Dominating on {""}{" "}
-              <a
-                href="https://www.arenaofvalor.com/"
-                className="has-text-light custom-links is-underlined"
-              >
-                Arena of Valor
-              </a>{" "}
-            </li>
-          </ul>
-
-          <hr className="footer-divider" />
-          <br />
-
-          <p className="is-size-4 has-text-theme">Connect</p>
-          <p>
-            You can contact me by email at{" "}
-            <a
-              href="mailto:kitakayaloisa@gmail.com"
-              className="has-text-light custom-links is-underlined"
-            >
-              kitakayaloisa@gmail.com
-            </a>{" "}
-            to say hi! I always appreciate meeting new people.
-          </p>
-          <p>or:</p>
-          <br />
-          <ul className="about-list">
-            <li>
-              <a
-                href="https://github.com/LoisaKitakaya"
-                className="has-text-light custom-links is-underlined"
-              >
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://twitter.com/FreedomLoisa"
-                className="has-text-light custom-links is-underlined"
-              >
-                Twitter
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://wa.me/254725131828"
-                className="has-text-light custom-links is-underlined"
-              >
-                Whatsapp
-              </a>
-            </li>
-          </ul>
-
-          <hr className="footer-divider" />
-          <br />
-
-          <p className="is-size-4 has-text-theme">Misc</p>
-          <p className="muted is-size-6">Open for employment</p>
-          <p>Looking for a developer?</p>
-          <ul className="about-list">
-            <li>
-              <a
-                href="https://res.cloudinary.com/dit0fii18/image/upload/v1664124091/documents/Resume_-_Freedom_Loisa_w3xg3a.pdf"
-                className="has-text-light custom-links is-underlined"
-              >
-                Resume
-              </a>
-            </li>
-          </ul>
-        </div>
+        {/* footer */}
+        <Footer />
+        {/* footer */}
       </div>
-      {/* app child */}
-      <br />
-      {/* footer */}
-      <Footer />
-      {/* footer */}
     </div>
   );
 };
