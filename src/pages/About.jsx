@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 import Navbar from "../components/Navbar";
 import myInfo from "../data/about.json";
@@ -220,7 +221,10 @@ const About = () => {
 
         {/* body */}
 
+        <hr className="border-1 border-zinc-500 my-4" />
+
         {/* footer */}
+        <Footer />
         {/* footer */}
       </div>
     </div>
