@@ -1,0 +1,74 @@
+{
+  "about_me": {
+    "bio": [
+      {
+        "paragraph": "Hey, I'm Loisa! I'm a software developer located in Nairobi, Kenya. Welcome to my spot on the web for my projects, tutorials, art, musings, and anything else I want to show the world."
+      },
+      {
+        "paragraph": "Check out the projects page to see a highlight of my open-source work, and the blog for my tutorials and more."
+      },
+      {
+        "paragraph": "My site has no ads, no affiliate links, no tracking or analytics, no sponsored posts, and no paywall. My only motivation for this site is to share what I've learned with the world."
+      },
+      {
+        "paragraph": "Although the tide is against me, I want to make the internet a better place. Even if it's just right here. I hope I will inspire others to make their own creative corner on the web as well."
+      },
+      {
+        "paragraph": "You can contact me by email at hello at kitakayaloisa@gamil.com to say hi! I always appreciate meeting new people."
+      }
+    ],
+    "images": [
+      {
+        "image": "https://res.cloudinary.com/dit0fii18/image/upload/v1669343253/documents/Me/IMG_20221124_174840_k6mql6.jpg",
+        "description": "C'est moi"
+      },
+      {
+        "image": "https://res.cloudinary.com/dit0fii18/image/upload/v1669343217/documents/Me/78635122_erhvrv.png",
+        "description": "C'est aussi moi"
+      }
+    ]
+  },
+  "what_im_doing_now": {
+    "updated_date": "Updated: Thursday November 24, 2022",
+    "content": "I've been re-reading the Harry Potter series (currently on Goblet of Fire), and I just bought a drawing tablet. You can see the RAM ram on the main page as an example of what I've been working on. I thought it would be a fun and relatively easy challenge to draw all 150 Pokémon (there aren't more than that, are there?) so I've been working on that as well."
+  },
+  "random_facts": [
+    { "fact": "I built my first website in 2016" },
+    {
+      "fact": "I like animated films and anime such as The DOTA's Dragon's Blood, Archer, and Code Geass"
+    },
+    {
+      "fact": "I have a soft sport for old video games such as Shrek 2, FIFA 2007, 25 to life"
+    },
+    { "fact": "I also like strategy games and competitive MOBAs 🎮" },
+    { "fact": "My best trivia category is ancient history" },
+    { "fact": "I have a cat named Nice" }
+  ],
+  "stack": {
+    "programming_languages": [
+      { "lang": "Python", "link": "https://www.python.org/" },
+      { "lang": "Javascript", "link": "https://www.javascript.com/" },
+      { "lang": "Julia", "link": "https://julialang.org/" }
+    ],
+    "frameworks": {
+      "backend": [
+        { "lang": "Django", "link": "https://djangoproject.com" },
+        {
+          "lang": "Flask",
+          "link": "https://flask.palletsprojects.com/en/2.2.x/"
+        },
+        { "lang": "Strapi", "link": "https://strapi.io/" }
+      ],
+      "frontend": [
+        { "lang": "React", "link": "https://reactjs.org/" },
+        { "lang": "Vue", "link": "https://vuejs.org/" }
+      ]
+    },
+    "databases": [
+      { "db": "PostgreSQL", "link": "https://www.postgresql.org/" },
+      { "db": "Redis", "link": "https://redis.io/" },
+      { "db": "SQLite3", "link": "https://www.sqlite.org/index.html" },
+      { "db": "MongoDb", "link": "https://www.mongodb.com/" }
+    ]
+  }
+}

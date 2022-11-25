@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import me from "../assets/me.png";
 
 const LandingPage = () => {
   return (
@@ -7,7 +6,7 @@ const LandingPage = () => {
       <div className="rounded-md shadow-md border border-zinc-300 px-4 py-8 w-2/4 flex items-center bg-white mx-auto">
         <img
           className="rounded-full border border-zinc-300 w-1/4 mx-auto"
-          src={me}
+          src="https://res.cloudinary.com/dit0fii18/image/upload/v1669343217/documents/Me/78635122_erhvrv.png"
           alt="me"
         />
         <div className="p-4 w-3/5 mx-auto">
