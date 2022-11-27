@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import PageTitle from "../PageTitle";
 
 const LandingPage = () => {
+  PageTitle("Home");
+  
   return (
     <div className="py-44 h-screen">
       <div className="rounded-md shadow-md border border-zinc-300 px-4 py-8 w-2/4 flex items-center bg-white mx-auto">
