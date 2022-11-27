@@ -9,7 +9,9 @@
     { "name": "API" },
     { "name": "Database" },
     { "name": "Git" },
-    { "name": "Julia" }
+    { "name": "Julia" },
+    { "name": "Linux" },
+    { "name": "Miscellaneous" }
   ],
   "tags": []
 }

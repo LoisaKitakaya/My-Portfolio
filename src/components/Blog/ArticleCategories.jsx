@@ -16,7 +16,7 @@ const ArticleCategories = () => {
                 key={index}
                 className="text-xl"
               >
-                <li className="rounded-md bg-slate-300 hover:bg-slate-400 duration-200 ease-linear my-4 py-4">
+                <li className="rounded-md bg-slate-300 hover:bg-slate-400 duration-200 ease-linear my-4 py-4 shadow-md">
                   {category.name}
                 </li>
               </Link>
