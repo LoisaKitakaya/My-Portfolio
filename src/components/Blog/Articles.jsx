@@ -46,7 +46,23 @@ const Articles = () => {
         </div>
       </div>
     );
-  if (error) return `Error: ${error.message}`;
+  if (error)
+    return (
+      <div className="h-full w-full">
+        <h1 className="text-center text-4xl text-zinc-500 py-4">
+          All articles
+        </h1>
+        <div
+          className="rounded-md shadow-md border border-zinc-300 bg-white m-4 w-fit py-36"
+          style={{
+            width: "800px",
+          }}
+        >
+          <p className="text-4xl mb-4 text-center">Oops! Something went wrong.</p>
+          <p className="text-center text-zinc-600">{error.message}</p>
+        </div>
+      </div>
+    );
 
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
