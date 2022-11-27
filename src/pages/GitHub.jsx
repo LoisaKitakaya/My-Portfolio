@@ -2,13 +2,14 @@ import { Octokit } from "octokit";
 import { Link } from "react-router-dom";
 
 import Footer from "../components/Footer";
-import GeneralStats from "../components/GitHub/GeneralStats";
 import Navbar from "../components/Navbar";
 
 const GitHub = () => {
   const octokit = new Octokit({
-    auth: process.env.TOKEN,
+    auth: process.env.REACT_APP_TOKEN,
   });
+
+  console.log(octokit);
 
   const navs = [
     { title: "Home", href: "/" },
@@ -31,7 +32,9 @@ const GitHub = () => {
         {/* body */}
 
         {/* general stats */}
-        <GeneralStats octokit={octokit} />
+        <div className="h-screen">
+          <h1 className="text-2xl text-center my-52">Coming soon...</h1>
+        </div>
         {/* general stats */}
 
         {/* body */}
