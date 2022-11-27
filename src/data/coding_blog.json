@@ -1,0 +1,17 @@
+{
+  "categories": [
+    { "name": "Python" },
+    { "name": "Javascript" },
+    { "name": "React" },
+    { "name": "Vue" },
+    { "name": "Flask" },
+    { "name": "Django" },
+    { "name": "API" },
+    { "name": "Database" },
+    { "name": "Git" },
+    { "name": "Julia" },
+    { "name": "Linux" },
+    { "name": "Miscellaneous" }
+  ],
+  "tags": []
+}
