@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import About from "./pages/About";
+import Article from "./pages/Article";
 import Blog from "./pages/Blog";
 import GitHub from "./pages/GitHub";
 
@@ -14,6 +15,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/stats" element={<GitHub />} />
         <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<Article />} />
       </Routes>
       {/* routes */}
     </div>

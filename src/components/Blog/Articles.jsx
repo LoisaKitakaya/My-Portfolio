@@ -58,7 +58,9 @@ const Articles = () => {
             width: "800px",
           }}
         >
-          <p className="text-4xl mb-4 text-center">Oops! Something went wrong.</p>
+          <p className="text-4xl mb-4 text-center">
+            Oops! Something went wrong.
+          </p>
           <p className="text-center text-zinc-600">{error.message}</p>
         </div>
       </div>
@@ -108,12 +110,13 @@ const Articles = () => {
                         {article.category.map((item, index) => {
                           const list = (
                             <>
-                              <span
+                              <Link
+                                to={`/categories/${item}`}
                                 key={index}
-                                className="mx-1 px-2 bg-slate-200 rounded-md"
+                                className="mx-1 px-2 bg-slate-200 rounded-md hover:shadow-md border"
                               >
                                 {item}
-                              </span>
+                              </Link>
                             </>
                           );
 
@@ -121,7 +124,7 @@ const Articles = () => {
                         })}
                       </p>
                     </div>
-                    <p className="mb-4">{article.intro}</p>
+                    <p className="mb-4 text-lg">{article.intro}</p>
                     {article.author !== null ? (
                       <div className="flex items-center">
                         <img
