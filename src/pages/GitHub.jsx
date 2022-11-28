@@ -1,18 +1,21 @@
 import { Octokit } from "octokit";
+import { useState } from "react";
+import { Tabs } from "@mantine/core";
 import { Link } from "react-router-dom";
+import { IconSeeding, IconMoodCrazyHappy, IconBrandGit } from "@tabler/icons";
 
 import Footer from "../components/Footer";
+// import GeneralStats from "../components/GitHub/GeneralStats";
 import Navbar from "../components/Navbar";
 import PageTitle from "../PageTitle";
+import RepoStats from "../components/GitHub/RepoStats";
 
-const GitHub = () => {
+const GitHub = ({ fetchData }) => {
   PageTitle("GitHub Stats");
 
   const octokit = new Octokit({
     auth: process.env.REACT_APP_TOKEN,
   });
-
-  console.log(octokit);
 
   const home = (
     <p className="flex items-center">
@@ -63,6 +66,22 @@ const GitHub = () => {
     </Link>
   ));
 
+  const [myRepos, setMyRepos] = useState([]);
+
+  const getAllRepos = async () => {
+    try {
+      const response = await octokit.request(
+        "GET /user/repos?per_page=100&sort=updated"
+      );
+      console.log(response.data);
+      setMyRepos(response.data);
+    } catch (error) {
+      console.log(
+        `Error! Status: ${error.status}. Message: ${error.response.data.message}`
+      );
+    }
+  };
+
   return (
     <div className="min-h-screen">
       <div className="mx-16 p-4">
@@ -73,19 +92,52 @@ const GitHub = () => {
         <hr className="border-1 border-zinc-500 my-4" />
 
         {/* body */}
-
-        {/* general stats */}
-        <div
-          style={{
-            height: "46vh",
-          }}
-        >
-          <h1 className="text-6xl text-center my-60 text-zinc-600">
-            Coming soon...
-          </h1>
+        <div className="mx-4">
+          <h1 className="text-4xl text-zinc-500 mb-4">My GitHub in data</h1>
+          <Tabs defaultValue="intro" id="repo-top">
+            <Tabs.List>
+              <Tabs.Tab value="intro" icon={<IconSeeding size={16} />}>
+                What's this about?
+              </Tabs.Tab>
+              <Tabs.Tab value="profile" icon={<IconMoodCrazyHappy size={16} />}>
+                My Profile
+              </Tabs.Tab>
+              <div onClick={() => getAllRepos()}>
+                <Tabs.Tab value="repos" icon={<IconBrandGit size={16} />}>
+                  My Repos
+                </Tabs.Tab>
+              </div>
+            </Tabs.List>
+            <Tabs.Panel value="intro" pt="xl">
+              <div className="mx-2 mb-16 w-3/5">
+                <p className="mb-4 text-lg">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum
+                  repudiandae dolores consectetur a amet distinctio. Obcaecati,
+                  accusamus. Placeat numquam, optio, nobis saepe dolor
+                  temporibus labore quasi molestias sequi quos corporis.
+                </p>
+                <p className="mb-4 text-lg">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum
+                  repudiandae dolores consectetur a amet distinctio. Obcaecati,
+                  accusamus. Placeat numquam, optio, nobis saepe dolor
+                  temporibus labore quasi molestias sequi quos corporis.
+                </p>
+                <p className="mb-4 text-lg">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum
+                  repudiandae dolores consectetur a amet distinctio. Obcaecati,
+                  accusamus. Placeat numquam, optio, nobis saepe dolor
+                  temporibus labore quasi molestias sequi quos corporis.
+                </p>
+              </div>
+            </Tabs.Panel>
+            <Tabs.Panel value="profile" pt="xl">
+              <div className="mx-2">Profile tab content</div>
+            </Tabs.Panel>
+            <Tabs.Panel value="repos" pt="xl">
+              <RepoStats myRepos={myRepos} />
+            </Tabs.Panel>
+          </Tabs>
         </div>
-        {/* general stats */}
-
         {/* body */}
 
         <hr className="border-1 border-zinc-500 my-4" />
