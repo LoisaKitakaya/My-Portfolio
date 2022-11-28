@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import PageTitle from "../PageTitle";
 import moment from "moment/moment";
 import loader from "../assets/Loading progress.gif";
+import UtterancesComments from "../components/UtterancesComments";
 
 const GET_ARTICLE = gql`
   query Article($slug: String!) {
@@ -143,51 +144,54 @@ const Article = () => {
         {/* body */}
         <div className="flex justify-between">
           {/* article */}
-          <div
-            className="rounded-md shadow-md border border-zinc-300 bg-white m-4 w-fit"
-            style={{
-              width: "800px",
-            }}
-          >
-            <img
-              className="rounded-t-md"
-              src={data.codingBlog.thumbnail.url}
-              alt="thumbnail"
+          <div>
+            <div
+              className="rounded-md shadow-md border border-zinc-300 bg-white m-4 w-fit"
               style={{
-                width: "100%",
-                height: "300px",
+                width: "800px",
               }}
-            />
-            <div className="p-4">
-              <div
-                className="mb-4 text-lg"
-                dangerouslySetInnerHTML={{
-                  __html: data.codingBlog.article.html,
+            >
+              <img
+                className="rounded-t-md"
+                src={data.codingBlog.thumbnail.url}
+                alt="thumbnail"
+                style={{
+                  width: "100%",
+                  height: "300px",
                 }}
               />
-              <hr className="border border-1 mb-4" />
-              <div className="flex items-center">
-                <img
-                  className="rounded-full"
-                  src={data.codingBlog.author.image.url}
-                  alt="'author's name"
-                  style={{
-                    width: "60px",
-                    height: "60px",
+              <div className="p-4">
+                <div
+                  className="mb-4 text-lg"
+                  dangerouslySetInnerHTML={{
+                    __html: data.codingBlog.article.html,
                   }}
                 />
-                <div className="ml-4">
-                  <p className="font-semibold cool-font">
-                    {data.codingBlog.author.name}
-                  </p>
-                  <p className="text-zinc-500">
-                    {`${moment(data.codingBlog.createdAt).format(
-                      "ll"
-                    )} ⚯ ${moment(data.codingBlog.createdAt).fromNow()}`}
-                  </p>
+                <hr className="border border-1 mb-4" />
+                <div className="flex items-center">
+                  <img
+                    className="rounded-full"
+                    src={data.codingBlog.author.image.url}
+                    alt="'author's name"
+                    style={{
+                      width: "60px",
+                      height: "60px",
+                    }}
+                  />
+                  <div className="ml-4">
+                    <p className="font-semibold cool-font">
+                      {data.codingBlog.author.name}
+                    </p>
+                    <p className="text-zinc-500">
+                      {`${moment(data.codingBlog.createdAt).format(
+                        "ll"
+                      )} ⚯ ${moment(data.codingBlog.createdAt).fromNow()}`}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
+            <UtterancesComments />
           </div>
           {/* article */}
 
