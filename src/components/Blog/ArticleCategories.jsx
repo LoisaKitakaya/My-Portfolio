@@ -6,7 +6,9 @@ const ArticleCategories = () => {
   const categories = data.categories;
   return (
     <div>
-      <h2 className="text-4xl text-zinc-500 text-center mt-4 mb-8">Categories</h2>
+      <h2 className="text-4xl text-zinc-500 text-center mt-4 mb-8">
+        Categories
+      </h2>
       <ul className="px-4 mx-auto w-80 text-center">
         {categories.map((category, index) => {
           const list = (
