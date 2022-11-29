@@ -1,5 +1,7 @@
 import { Badge, Pagination, Modal, useMantineTheme, Menu } from "@mantine/core";
 import { useEffect, useState } from "react";
+import { IconFileReport } from "@tabler/icons";
+
 import ContributorCommitActivity from "../Charts/ContributorCommitActivity";
 import LastYearCommitActivity from "../Charts/LastYearCommitActivity";
 import WeeklyCommitActivity from "../Charts/WeeklyCommitActivity";
@@ -59,7 +61,12 @@ const RepoStats = ({ myRepos, octokit }) => {
                         setUrlParams(repo.full_name);
                       }}
                     >
-                      <Menu.Item>Weekly commit activity</Menu.Item>
+                      <Menu.Item
+                        icon={<IconFileReport size={16} />}
+                        color="black"
+                      >
+                        Weekly commit activity
+                      </Menu.Item>
                     </div>
                     <div
                       onClick={() => {
@@ -68,7 +75,12 @@ const RepoStats = ({ myRepos, octokit }) => {
                         setUrlParams(repo.full_name);
                       }}
                     >
-                      <Menu.Item>Last year commit activity</Menu.Item>
+                      <Menu.Item
+                        icon={<IconFileReport size={16} />}
+                        color="black"
+                      >
+                        Last year commit activity
+                      </Menu.Item>
                     </div>
                     <div
                       onClick={() => {
@@ -77,7 +89,12 @@ const RepoStats = ({ myRepos, octokit }) => {
                         setUrlParams(repo.full_name);
                       }}
                     >
-                      <Menu.Item>Contributor commit activity</Menu.Item>
+                      <Menu.Item
+                        icon={<IconFileReport size={16} />}
+                        color="black"
+                      >
+                        Contributor commit activity
+                      </Menu.Item>
                     </div>
                   </Menu.Dropdown>
                 </Menu>

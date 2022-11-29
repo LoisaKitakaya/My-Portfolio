@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef } from "react";
+
 import loader from "../../assets/Loading progress.gif";
 
 const ContributorCommitActivity = ({ urlParams, octokit }) => {
@@ -35,14 +36,16 @@ const ContributorCommitActivity = ({ urlParams, octokit }) => {
   });
 
   return (
-    <div className="rounded-md shadow-md border border-zinc-300 my-4 p-4 bg-slate-200">
+    <div className="rounded-md shadow-md border border-zinc-300 my-4 p-4 bg-slate-100">
       {fetching ? (
         <div className="w-fit mx-auto my-24">
           <img src={loader} alt="loader" />
           <p className="text-lg text-center text-blue-600">loading...</p>
         </div>
       ) : (
-        <></>
+        <>
+          <h1 className="text-xl mb-4">Contributor commit activity</h1>
+        </>
       )}
     </div>
   );
