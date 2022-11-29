@@ -20,7 +20,7 @@ const RepoStats = ({ myRepos }) => {
                   variant="outline"
                   radius="sm"
                   size="xl"
-                  className="my-4 w-2/4 shadow-md hover:cursor-pointer hover:bg-slate-300 duration-200 ease-linear"
+                  className="my-4 shadow-md hover:cursor-pointer hover:bg-slate-300 duration-200 ease-linear"
                 >
                   {repo.full_name}
                 </Badge>

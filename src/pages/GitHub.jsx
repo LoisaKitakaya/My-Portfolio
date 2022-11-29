@@ -9,6 +9,8 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import PageTitle from "../PageTitle";
 import RepoStats from "../components/GitHub/RepoStats";
+import Profile from "../components/GitHub/Profile";
+import loader from "../assets/Loading progress.gif";
 
 const GitHub = ({ fetchData }) => {
   PageTitle("GitHub Stats");
@@ -67,8 +69,11 @@ const GitHub = ({ fetchData }) => {
   ));
 
   const [myRepos, setMyRepos] = useState([]);
+  const [myProfile, setMyProfile] = useState({});
+  const [fetching, setFetching] = useState(false);
 
   const getAllRepos = async () => {
+    setFetching(true);
     try {
       const response = await octokit.request(
         "GET /user/repos?per_page=100&sort=updated"
@@ -80,6 +85,21 @@ const GitHub = ({ fetchData }) => {
         `Error! Status: ${error.status}. Message: ${error.response.data.message}`
       );
     }
+    setFetching(false);
+  };
+
+  const getProfile = async () => {
+    setFetching(true);
+    try {
+      const response = await octokit.request("GET /user");
+      console.log(response.data);
+      setMyProfile(response.data);
+    } catch (error) {
+      console.log(
+        `Error! Status: ${error.status}. Message: ${error.response.data.message}`
+      );
+    }
+    setFetching(false);
   };
 
   return (
@@ -94,14 +114,19 @@ const GitHub = ({ fetchData }) => {
         {/* body */}
         <div className="mx-4">
           <h1 className="text-4xl text-zinc-500 mb-4">My GitHub in data</h1>
-          <Tabs defaultValue="intro" id="repo-top">
+          <Tabs defaultValue="intro" id="repo-top" className="w-3/5">
             <Tabs.List>
               <Tabs.Tab value="intro" icon={<IconSeeding size={16} />}>
                 What's this about?
               </Tabs.Tab>
-              <Tabs.Tab value="profile" icon={<IconMoodCrazyHappy size={16} />}>
-                My Profile
-              </Tabs.Tab>
+              <div onClick={() => getProfile()}>
+                <Tabs.Tab
+                  value="profile"
+                  icon={<IconMoodCrazyHappy size={16} />}
+                >
+                  My Profile
+                </Tabs.Tab>
+              </div>
               <div onClick={() => getAllRepos()}>
                 <Tabs.Tab value="repos" icon={<IconBrandGit size={16} />}>
                   My Repos
@@ -109,32 +134,65 @@ const GitHub = ({ fetchData }) => {
               </div>
             </Tabs.List>
             <Tabs.Panel value="intro" pt="xl">
-              <div className="mx-2 mb-16 w-3/5">
+              <div
+                className="mx-2"
+                style={{
+                  height: "425px",
+                }}
+              >
                 <p className="mb-4 text-lg">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum
-                  repudiandae dolores consectetur a amet distinctio. Obcaecati,
-                  accusamus. Placeat numquam, optio, nobis saepe dolor
-                  temporibus labore quasi molestias sequi quos corporis.
+                  In an attempt to either give my portfolio website some cool
+                  features or just make it more complicated (probably the
+                  latter), I have here some statistical visualization of my
+                  GitHub repositories.
                 </p>
                 <p className="mb-4 text-lg">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum
-                  repudiandae dolores consectetur a amet distinctio. Obcaecati,
-                  accusamus. Placeat numquam, optio, nobis saepe dolor
-                  temporibus labore quasi molestias sequi quos corporis.
+                  Also I thought it would be cool to include some personal data
+                  from my GitHub profile.
                 </p>
                 <p className="mb-4 text-lg">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eum
-                  repudiandae dolores consectetur a amet distinctio. Obcaecati,
-                  accusamus. Placeat numquam, optio, nobis saepe dolor
-                  temporibus labore quasi molestias sequi quos corporis.
+                  I To achieve this I am using the{" "}
+                  <a
+                    className="text-blue-600 hover:text-blue-700 underline"
+                    href="https://docs.github.com/en/rest"
+                  >
+                    GitHub REST API
+                  </a>{" "}
+                  to get my personal data (my profile and repos),{" "}
+                  <a
+                    className="text-blue-600 hover:text-blue-700 underline"
+                    href="https://formidable.com/open-source/victory/docs"
+                  >
+                    Victory charts
+                  </a>{" "}
+                  to generate graphs for some of the stats from{" "}
+                  <span className="text-blue-600">REST API</span>
                 </p>
               </div>
             </Tabs.Panel>
             <Tabs.Panel value="profile" pt="xl">
-              <div className="mx-2">Profile tab content</div>
+              {fetching ? (
+                <div className="w-fit mx-auto mt-24 mb-72">
+                  <img src={loader} alt="loader" />
+                  <p className="text-lg text-center text-blue-600">
+                    loading...
+                  </p>
+                </div>
+              ) : (
+                <Profile myProfile={myProfile} />
+              )}
             </Tabs.Panel>
             <Tabs.Panel value="repos" pt="xl">
-              <RepoStats myRepos={myRepos} />
+              {fetching ? (
+                <div className="w-fit mx-auto mt-24 mb-72">
+                  <img src={loader} alt="loader" />
+                  <p className="text-lg text-center text-blue-600">
+                    loading...
+                  </p>
+                </div>
+              ) : (
+                <RepoStats myRepos={myRepos} />
+              )}
             </Tabs.Panel>
           </Tabs>
         </div>
