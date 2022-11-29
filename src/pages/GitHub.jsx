@@ -143,29 +143,29 @@ const GitHub = ({ fetchData }) => {
                 <p className="mb-4 text-lg">
                   In an attempt to either give my portfolio website some cool
                   features or just make it more complicated (probably the
-                  latter), I have here some statistical visualization of my
-                  GitHub repositories.
+                  latter), I have here some statistical visualizations of my
+                  GitHub repositories data.
                 </p>
                 <p className="mb-4 text-lg">
-                  Also I thought it would be cool to include some personal data
+                  Also, I thought it would be cool to include some personal data
                   from my GitHub profile.
                 </p>
                 <p className="mb-4 text-lg">
-                  I To achieve this I am using the{" "}
+                  I To achieve this I have used the{" "}
                   <a
                     className="text-blue-600 hover:text-blue-700 underline"
                     href="https://docs.github.com/en/rest"
                   >
                     GitHub REST API
                   </a>{" "}
-                  to get my personal data (my profile and repos),{" "}
+                  to get my data (my profile and repos), and{" "}
                   <a
                     className="text-blue-600 hover:text-blue-700 underline"
                     href="https://recharts.org/en-US"
                   >
                     Recharts
                   </a>{" "}
-                  to generate graphs for some of the stats from{" "}
+                  to generate graphs to visualize some of the stats from{" "}
                   <span className="text-blue-600">REST API</span>
                 </p>
               </div>
