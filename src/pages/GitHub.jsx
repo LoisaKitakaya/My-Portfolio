@@ -161,9 +161,9 @@ const GitHub = ({ fetchData }) => {
                   to get my personal data (my profile and repos),{" "}
                   <a
                     className="text-blue-600 hover:text-blue-700 underline"
-                    href="https://formidable.com/open-source/victory/docs"
+                    href="https://recharts.org/en-US"
                   >
-                    Victory charts
+                    Recharts
                   </a>{" "}
                   to generate graphs for some of the stats from{" "}
                   <span className="text-blue-600">REST API</span>
