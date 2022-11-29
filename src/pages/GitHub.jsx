@@ -191,7 +191,7 @@ const GitHub = ({ fetchData }) => {
                   </p>
                 </div>
               ) : (
-                <RepoStats myRepos={myRepos} />
+                <RepoStats myRepos={myRepos} octokit={octokit} />
               )}
             </Tabs.Panel>
           </Tabs>
