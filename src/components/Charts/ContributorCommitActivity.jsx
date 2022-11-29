@@ -48,13 +48,13 @@ const ContributorCommitActivity = ({ urlParams, octokit }) => {
   return (
     <div className="my-4 p-4">
       {fetching ? (
-        <div className="w-fit mx-auto my-24">
+        <div className="w-fit mx-auto mt-8 mb-4">
           <img src={loader} alt="loader" />
           <p className="text-lg text-center text-blue-600">loading...</p>
         </div>
       ) : (
         <>
-          <h1 className="text-xl mb-8">My commit activity</h1>
+          <h1 className="text-xl mb-8">{urlParams}</h1>
           <CcaChart chartData={ccaData.current} />
           <div className="mx-auto w-3/4">
             <p className="text-lg mb-4">
