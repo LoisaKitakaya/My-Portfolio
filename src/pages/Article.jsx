@@ -110,10 +110,19 @@ const Article = () => {
   if (loading)
     return (
       <div className="h-full w-full">
-        <h1 className="text-center text-4xl text-zinc-500 py-4">Article</h1>
-        <div className="my-48">
-          <img src={loader} alt="loading..." className="w-fit mx-auto mb-2" />
-          <p className="text-lg text-center text-blue-600">loading...</p>
+        <div className="mx-16 p-4">
+          {/* navbar */}
+          <Navbar navs={navs} />
+          {/* navbar */}
+          <hr className="border-1 border-zinc-500 my-4" />
+          <div className="my-64">
+            <img src={loader} alt="loading..." className="w-fit mx-auto mb-2" />
+            <p className="text-lg text-center text-blue-600">loading...</p>
+          </div>
+          <hr className="border-1 border-zinc-500 my-4" />
+          {/* footer */}
+          <Footer />
+          {/* footer */}
         </div>
       </div>
     );
