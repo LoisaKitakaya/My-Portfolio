@@ -3,12 +3,13 @@
 @tailwind utilities;
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
-@import url("https://fonts.googleapis.com/css2?family=Kanit&family=Poppins&family=Raleway&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Poppins&family=Raleway&family=Source+Code+Pro&display=swap');
 
 /* 
 font-family: 'Kanit', sans-serif;
 font-family: 'Poppins', sans-serif;
 font-family: 'Raleway', sans-serif;
+font-family: 'Source Code Pro', monospace;
 */
 
 body {
@@ -44,4 +45,14 @@ html::-webkit-scrollbar-thumb:hover {
 
 html::-webkit-scrollbar-thumb:active {
   background: rgb(68, 68, 68) !important;
+}
+
+pre, code {
+  font-family: 'Source Code Pro', monospace !important;
+  overflow-x: auto !important;
+  tab-size: 4 !important;
+  background-color: rgb(60, 64, 80) !important;
+  color: white !important;
+  padding: 0 1rem !important;
+  border-radius: 0.5rem;
 }
