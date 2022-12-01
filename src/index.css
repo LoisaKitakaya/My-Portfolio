@@ -115,6 +115,14 @@ code {
     margin: 0 auto 1rem auto !important;
     width: 95% !important;
   }
+
+  .navbar-sm {
+    display: none !important;
+  }
+
+  .burger {
+    display: inline-block !important;
+  }
 }
 
 /* media queries */
