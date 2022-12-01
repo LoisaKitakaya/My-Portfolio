@@ -6,11 +6,6 @@
     { "name": "Vue" },
     { "name": "Flask" },
     { "name": "Django" },
-    { "name": "API" },
-    { "name": "Database" },
-    { "name": "Git" },
-    { "name": "Julia" },
-    { "name": "Linux" },
-    { "name": "Miscellaneous" }
+    { "name": "Julia" }
   ]
 }

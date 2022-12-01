@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-import ProjectList from "../components/Projects/ProjectList";
-import ProjectCategories from "../components/Projects/ProjectCategories";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import PageTitle from "../PageTitle";
+import ProjectList from "../components/CategoriesTwo/ProjectList";
+import ProjectCategories from "../components/CategoriesTwo/ProjectCategories";
 
-const Projects = () => {
+const CategoriesTwo = () => {
   PageTitle("Projects");
 
   const home = (
@@ -50,9 +50,12 @@ const Projects = () => {
     </p>
   );
 
+  const { category } = useParams();
+
   const navs = [
     { title: home, href: "/" },
-    { title: projectTitle, href: "" },
+    { title: projectTitle, href: "/projects" },
+    { title: `Category: ${category}`, href: "" },
   ].map((item, index) => (
     <Link to={item.href} key={index}>
       {item.title}
@@ -68,7 +71,7 @@ const Projects = () => {
         <hr className="border-1 border-zinc-500 my-4" />
         {/* body */}
         <div className="flex justify-between">
-          <ProjectList />
+          <ProjectList category={category} />
           <ProjectCategories />
         </div>
         {/* body */}
@@ -81,4 +84,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default CategoriesTwo;
