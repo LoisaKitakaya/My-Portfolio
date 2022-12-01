@@ -7,8 +7,8 @@ import moment from "moment/moment";
 import loader from "../../assets/Loading progress.gif";
 
 const GET_BLOGS = gql`
-  query CodingBlog {
-    codingBlogs(orderBy: publishedAt_DESC) {
+  query CodingBlog($category: [CodeBlogCategories!]) {
+    codingBlogs(orderBy: publishedAt_DESC, where: { category: $category }) {
       title
       slug
       thumbnail {
@@ -27,11 +27,13 @@ const GET_BLOGS = gql`
   }
 `;
 
-const Articles = () => {
+const Articles = ({ category }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(5);
 
-  const { loading, error, data } = useQuery(GET_BLOGS);
+  const { loading, error, data } = useQuery(GET_BLOGS, {
+    variables: { category: [category] },
+  });
 
   if (data) console.log(data);
   if (loading)
@@ -50,7 +52,7 @@ const Articles = () => {
     return (
       <div className="h-full w-full">
         <h1 className="text-center text-4xl text-zinc-500 py-4">
-          All articles
+          {category} related articles
         </h1>
         <div
           className="rounded-md shadow-md border border-zinc-300 bg-white m-4 w-fit py-36"
@@ -77,7 +79,7 @@ const Articles = () => {
     <div>
       <div className="mb-8">
         <h1 className="text-center text-4xl text-zinc-500 py-4" id="blog-top">
-          All articles
+          {category} articles
         </h1>
         {currentPosts.map((article, index) => {
           const list = (
@@ -122,8 +124,7 @@ const Articles = () => {
                             <>
                               <span
                                 key={index}
-                                className="mx-1 px-2 bg-slate-200 rounded-md
-                                shadow-md border"
+                                className="mx-1 px-2 bg-slate-200 rounded-md shadow-md border"
                               >
                                 {item}
                               </span>

@@ -246,9 +246,16 @@ const Article = () => {
                   const list = (
                     <>
                       <Link
-                        to={`/categories/${item}`}
+                        to={`/blog/categories/${item}`}
                         key={index}
                         className="mr-1 px-2 bg-slate-200 rounded-md hover:shadow-md border"
+                        onClick={() => {
+                          const element = document.getElementById("root");
+
+                          element.scrollIntoView({
+                            behavior: "smooth",
+                          });
+                        }}
                       >
                         {item}
                       </Link>
