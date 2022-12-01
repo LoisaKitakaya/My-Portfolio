@@ -123,6 +123,22 @@ code {
   .burger {
     display: inline-block !important;
   }
+
+  .git-one {
+    margin: 0 !important;
+  }
+
+  .git-two {
+    width: 100% !important;
+  }
+
+  .git-three {
+    height: auto !important;
+  }
+
+  .git-four {
+    width: auto !important;
+  }
 }
 
 /* media queries */

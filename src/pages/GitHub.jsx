@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import { IconSeeding, IconMoodCrazyHappy, IconBrandGit } from "@tabler/icons";
 
 import Footer from "../components/Footer";
-// import GeneralStats from "../components/GitHub/GeneralStats";
 import Navbar from "../components/Navbar";
 import PageTitle from "../PageTitle";
 import RepoStats from "../components/GitHub/RepoStats";
@@ -104,7 +103,7 @@ const GitHub = ({ fetchData }) => {
 
   return (
     <div className="min-h-screen">
-      <div className="mx-16 p-4">
+      <div className="mx-16 p-4 git-one">
         {/* navbar */}
         <Navbar navs={navs} />
         {/* navbar */}
@@ -114,7 +113,7 @@ const GitHub = ({ fetchData }) => {
         {/* body */}
         <div className="mx-4">
           <h1 className="text-4xl text-zinc-500 mb-4">My GitHub in data</h1>
-          <Tabs defaultValue="intro" id="repo-top" className="w-3/5">
+          <Tabs defaultValue="intro" id="repo-top" className="w-3/5 git-two">
             <Tabs.List>
               <Tabs.Tab value="intro" icon={<IconSeeding size={16} />}>
                 What's this about?
@@ -135,7 +134,7 @@ const GitHub = ({ fetchData }) => {
             </Tabs.List>
             <Tabs.Panel value="intro" pt="xl">
               <div
-                className="mx-2"
+                className="mx-2 git-three"
                 style={{
                   height: "425px",
                 }}
