@@ -14,7 +14,7 @@ const ArticleCategories = () => {
           const list = (
             <>
               <Link
-                to={`categories/${category.name}`}
+                to={`/blog/categories/${category.name}`}
                 key={index}
                 className="text-xl"
                 onClick={() => {

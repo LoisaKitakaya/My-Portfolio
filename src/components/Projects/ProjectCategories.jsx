@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 
-import data from "../../data/coding_blog.json";
+import data from "../../data/project_blog.json"
 
-const ArticleCategories = () => {
+const ProjectCategories = () => {
   const categories = data.categories;
   return (
     <div>
@@ -39,4 +39,4 @@ const ArticleCategories = () => {
   );
 };
 
-export default ArticleCategories;
+export default ProjectCategories;

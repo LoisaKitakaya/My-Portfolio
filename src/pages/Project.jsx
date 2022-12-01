@@ -7,30 +7,26 @@ import PageTitle from "../PageTitle";
 import moment from "moment/moment";
 import loader from "../assets/Loading progress.gif";
 import UtterancesComments from "../components/UtterancesComments";
+import author from "../data/about.json";
 
-const GET_ARTICLE = gql`
-  query Article($slug: String!) {
-    codingBlog(where: { slug: $slug }) {
+const GET_PROJECT = gql`
+  query Project($slug: String!) {
+    projectBlog(where: { slug: $slug }) {
       title
       thumbnail {
         url
       }
       category
+      labels
       article {
         html
       }
       createdAt
-      author {
-        name
-        image {
-          url
-        }
-      }
     }
   }
 `;
 
-const Article = () => {
+const Project = () => {
   const home = (
     <p className="flex items-center">
       <svg
@@ -51,7 +47,7 @@ const Article = () => {
     </p>
   );
 
-  const blogTitle = (
+  const projectTitle = (
     <p className="flex items-center">
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -59,23 +55,23 @@ const Article = () => {
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-5 h-5 text-blue-600"
+        className="w-5 h-5 mx-1 text-emerald-600"
       >
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
-          d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"
+          d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"
         />
       </svg>
 
-      <span className="ml-1">Blog</span>
+      <span className="ml-1">Projects</span>
     </p>
   );
 
-  const { slug } = useParams();
+  const { project } = useParams();
 
-  const formatText = (slug) => {
-    const noHyphenText = slug.replaceAll("-", " ");
+  const formatText = (project) => {
+    const noHyphenText = project.replaceAll("-", " ");
 
     const myArray = noHyphenText.split(" ");
 
@@ -90,20 +86,20 @@ const Article = () => {
     return newArray.join(" ");
   };
 
-  PageTitle(formatText(slug));
+  PageTitle(formatText(project));
 
   const navs = [
     { title: home, href: "/" },
-    { title: blogTitle, href: "/blog" },
-    { title: formatText(slug), href: "" },
+    { title: projectTitle, href: "/projects" },
+    { title: formatText(project), href: "" },
   ].map((item, index) => (
     <Link to={item.href} key={index}>
       {item.title}
     </Link>
   ));
 
-  const { loading, error, data } = useQuery(GET_ARTICLE, {
-    variables: { slug: slug },
+  const { loading, error, data } = useQuery(GET_PROJECT, {
+    variables: { slug: project },
   });
 
   if (data) console.log(data);
@@ -143,6 +139,8 @@ const Article = () => {
       </div>
     );
 
+  const authorImg = author.about_me;
+
   return (
     <div className="min-h-screen">
       <div className="mx-16 p-4">
@@ -162,7 +160,7 @@ const Article = () => {
             >
               <img
                 className="rounded-t-md"
-                src={data.codingBlog.thumbnail.url}
+                src={data.projectBlog.thumbnail.url}
                 alt="thumbnail"
                 style={{
                   width: "100%",
@@ -173,30 +171,26 @@ const Article = () => {
                 <div
                   className="mb-4 text-lg"
                   dangerouslySetInnerHTML={{
-                    __html: data.codingBlog.article.html,
+                    __html: data.projectBlog.article.html,
                   }}
                 />
                 <hr className="border border-1 mb-4" />
                 <div className="flex items-center">
-                  <img
-                    className="rounded-full"
-                    src={data.codingBlog.author.image.url}
-                    alt="'author's name"
-                    style={{
-                      width: "60px",
-                      height: "60px",
-                    }}
-                  />
-                  <div className="ml-4">
-                    <p className="font-semibold cool-font">
-                      {data.codingBlog.author.name}
-                    </p>
-                    <p className="text-zinc-500">
-                      {`${moment(data.codingBlog.createdAt).format(
-                        "ll"
-                      )} ⚯ ${moment(data.codingBlog.createdAt).fromNow()}`}
-                    </p>
-                  </div>
+                  {data.projectBlog.labels.map((item, index) => {
+                    const list = (
+                      <>
+                        <span
+                          key={index}
+                          className="mr-2 px-2 bg-sky-300 rounded-lg
+                                shadow-md border"
+                        >
+                          {item}
+                        </span>
+                      </>
+                    );
+
+                    return list;
+                  })}
                 </div>
               </div>
             </div>
@@ -210,7 +204,7 @@ const Article = () => {
               <div className="flex flex-col items-center">
                 <img
                   className="rounded-full mb-2"
-                  src={data.codingBlog.author.image.url}
+                  src={authorImg.images[0].image}
                   alt="'author's name"
                   style={{
                     width: "120px",
@@ -237,34 +231,42 @@ const Article = () => {
               <p className="text-lg text-zinc-500 mb-2">
                 Published on: <br />
                 <span className="text-black">
-                  {moment(data.codingBlog.createdAt).format("ll")}
+                  {moment(data.projectBlog.createdAt).format("ll")}
                 </span>
               </p>
-              <p className="text-lg text-zinc-500 mb-2">
-                Category: <br />
-                {data.codingBlog.category.map((item, index) => {
+              <p className="text-lg text-zinc-500 mb-4">
+                Category:{" "}
+                <Link
+                  to={`/projects/categories/${data.projectBlog.category}`}
+                  className="mr-1 px-2 bg-slate-200 rounded-md hover:shadow-md border"
+                  onClick={() => {
+                    const element = document.getElementById("root");
+
+                    element.scrollIntoView({
+                      behavior: "smooth",
+                    });
+                  }}
+                >
+                  {data.projectBlog.category}
+                </Link>
+              </p>
+              <hr className="mt-2 mb-4 border border-zinc-300" />
+              <div className="flex items-center flex-wrap">
+                {data.projectBlog.labels.map((item, index) => {
                   const list = (
                     <>
-                      <Link
-                        to={`/blog/categories/${item}`}
+                      <span
                         key={index}
-                        className="mr-1 px-2 bg-slate-200 rounded-md hover:shadow-md border"
-                        onClick={() => {
-                          const element = document.getElementById("root");
-
-                          element.scrollIntoView({
-                            behavior: "smooth",
-                          });
-                        }}
+                        className="mr-1 px-2 bg-sky-300 rounded-md shadow-md border"
                       >
                         {item}
-                      </Link>
+                      </span>
                     </>
                   );
 
                   return list;
                 })}
-              </p>
+              </div>
             </div>
           </div>
           {/* article details */}
@@ -279,4 +281,4 @@ const Article = () => {
   );
 };
 
-export default Article;
+export default Project;
