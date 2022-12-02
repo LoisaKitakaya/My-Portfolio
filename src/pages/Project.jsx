@@ -227,7 +227,7 @@ const Project = () => {
                 sponsored posts.
               </p>
             </div>
-            <div className="p-4 my-4 border border-zinc-300 shadow-md mx-auto w-80 rounded-md bg-white h-fit">
+            <div className="p-4 my-4 border border-zinc-300 shadow-md mx-auto w-80 rounded-md bg-white h-fit project-six">
               <p className="text-lg text-zinc-500 mb-2">
                 Published on: <br />
                 <span className="text-black">
