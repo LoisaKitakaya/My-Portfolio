@@ -175,7 +175,7 @@ const Project = () => {
                   }}
                 />
                 <hr className="border border-1 mb-4" />
-                <div className="flex items-center">
+                <div className="flex items-center flex-wrap">
                   {data.projectBlog.labels.map((item, index) => {
                     const list = (
                       <>
