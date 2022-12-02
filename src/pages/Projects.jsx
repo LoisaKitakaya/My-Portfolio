@@ -61,13 +61,13 @@ const Projects = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="mx-16 p-4">
+      <div className="mx-16 p-4 project-one">
         {/* navbar */}
         <Navbar navs={navs} />
         {/* navbar */}
         <hr className="border-1 border-zinc-500 my-4" />
         {/* body */}
-        <div className="flex justify-between">
+        <div className="flex justify-between project-four">
           <ProjectList />
           <ProjectCategories />
         </div>

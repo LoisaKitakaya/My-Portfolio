@@ -64,7 +64,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="mx-16 p-4">
+      <div className="mx-16 p-4 about-zero">
         {/* navbar */}
         <Navbar navs={navs} />
         {/* navbar */}
@@ -72,7 +72,7 @@ const About = () => {
         <hr className="border-1 border-zinc-500 my-4" />
 
         {/* body */}
-        <div className="flex justify-between ml-8">
+        <div className="flex justify-between ml-8 about-one about-text">
           <div>
             <h4 className="text-4xl mb-8">About me</h4>
             {about.bio.map((item, index) => {
@@ -230,6 +230,7 @@ const About = () => {
             >
               Resume
             </a>
+            <div className="about-resume"/>
           </div>
           <div className="flex flex-col w-fit">
             {about.images.map((pic, index) => {
@@ -237,7 +238,7 @@ const About = () => {
                 <>
                   <div
                     key={index}
-                    className="rounded-md shadow-md border border-zinc-200 border-1 mb-4 mx-auto"
+                    className="rounded-md shadow-md border border-zinc-200 border-1 mb-4 mx-auto about-img"
                     style={{
                       width: "80%",
                     }}

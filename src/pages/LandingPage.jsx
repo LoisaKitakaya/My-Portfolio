@@ -5,14 +5,14 @@ const LandingPage = () => {
   PageTitle("Home");
   
   return (
-    <div className="py-44 h-screen">
-      <div className="rounded-md shadow-md border border-zinc-300 px-4 py-8 w-2/4 flex items-center bg-white mx-auto">
+    <div className="py-44 h-screen landing-zero">
+      <div className="rounded-md shadow-md border border-zinc-300 px-4 py-8 w-2/4 flex items-center bg-white mx-auto landing-one">
         <img
-          className="rounded-full border border-zinc-300 w-1/4 mx-auto"
+          className="rounded-full border border-zinc-300 w-1/4 mx-auto landing-img"
           src="https://res.cloudinary.com/dit0fii18/image/upload/v1669343217/documents/Me/78635122_erhvrv.png"
           alt="me"
         />
-        <div className="p-4 w-3/5 mx-auto">
+        <div className="p-4 w-3/5 mx-auto landing-caption">
           <h3 className="text-2xl mb-4">Freedom Loisa</h3>
           <p>
             I'm a software engineer in Nairobi. I love building open-source
@@ -20,11 +20,18 @@ const LandingPage = () => {
           </p>
         </div>
       </div>
-      <hr className="border border-dashed border-zinc-400 w-2/4 flex mx-auto my-4" />
-      <div className="flex items-center justify-evenly w-2/4 mx-auto">
+      <hr className="border border-dashed border-zinc-400 w-2/4 flex mx-auto my-4 hr-resized" />
+      <div className="flex items-center justify-evenly w-2/4 mx-auto landing-nav">
         <Link
           to="/about"
-          className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center"
+          onClick={() => {
+            const element = document.getElementById("root");
+
+            element.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+          className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center landing-nav-btn"
         >
           <span className="text-lg text-zinc-600">About</span>
           <svg
@@ -44,7 +51,14 @@ const LandingPage = () => {
         </Link>
         <Link
           to="/stats"
-          className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center"
+          onClick={() => {
+            const element = document.getElementById("root");
+
+            element.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+          className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center landing-nav-btn"
         >
           <span className="text-lg text-zinc-600">Git stats</span>
           <svg
@@ -64,7 +78,14 @@ const LandingPage = () => {
         </Link>
         <Link
           to="/blog"
-          className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center"
+          onClick={() => {
+            const element = document.getElementById("root");
+
+            element.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+          className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center landing-nav-btn"
         >
           <span className="text-lg text-zinc-600">Blog</span>
           <svg
@@ -84,7 +105,14 @@ const LandingPage = () => {
         </Link>
         <Link
           to="/projects"
-          className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center"
+          onClick={() => {
+            const element = document.getElementById("root");
+
+            element.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
+          className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center landing-nav-btn"
         >
           <span className="text-lg text-zinc-600">Projects</span>
           <svg

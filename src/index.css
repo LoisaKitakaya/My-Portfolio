@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css");
-@import url('https://fonts.googleapis.com/css2?family=Kanit&family=Poppins&family=Raleway&family=Source+Code+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kanit&family=Poppins&family=Raleway&family=Source+Code+Pro&display=swap");
 
 /* 
 font-family: 'Kanit', sans-serif;
@@ -47,8 +47,9 @@ html::-webkit-scrollbar-thumb:active {
   background: rgb(68, 68, 68) !important;
 }
 
-pre, code {
-  font-family: 'Source Code Pro', monospace !important;
+pre,
+code {
+  font-family: "Source Code Pro", monospace !important;
   overflow-x: auto !important;
   tab-size: 4 !important;
   background-color: rgb(60, 64, 80) !important;
@@ -56,3 +57,114 @@ pre, code {
   padding: 0 1rem !important;
   border-radius: 0.5rem;
 }
+
+/* media queries */
+
+@media screen and (max-width: 480px) {
+  .landing-zero {
+    padding: 1rem 0 !important;
+  }
+
+  .landing-one {
+    flex-direction: column !important;
+    padding: 1rem 0 !important;
+    width: 95% !important;
+  }
+
+  .hr-resized {
+    margin: 1rem auto !important;
+    width: 95% !important;
+  }
+  .landing-img {
+    width: 50% !important;
+  }
+
+  .landing-caption {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .landing-nav {
+    flex-direction: column !important;
+  }
+
+  .landing-nav-btn {
+    width: 100% !important;
+    margin: 1rem auto !important;
+    justify-content: center !important;
+  }
+
+  .about-one {
+    flex-direction: column-reverse !important;
+  }
+
+  .about-zero {
+    margin: 0.5rem 0 !important ;
+  }
+
+  .about-text {
+    margin: 0 !important;
+  }
+
+  .about-resume {
+    margin: 2rem auto !important;
+  }
+
+  .about-img {
+    margin: 0 auto 1rem auto !important;
+    width: 95% !important;
+  }
+
+  .navbar-sm {
+    display: none !important;
+  }
+
+  .burger {
+    display: inline-block !important;
+  }
+
+  .git-one {
+    margin: 0 !important;
+  }
+
+  .git-two {
+    width: 100% !important;
+  }
+
+  .git-three {
+    height: auto !important;
+  }
+
+  .git-four {
+    width: auto !important;
+  }
+
+  .blog-one,
+  .project-one {
+    margin: 0 !important;
+  }
+
+  .blog-two,
+  .project-two {
+    text-align: left !important;
+  }
+
+  .blog-three,
+  .project-three {
+    width: auto !important;
+    margin: 1rem 0 !important;
+  }
+
+  .blog-four,
+  .project-four {
+    flex-direction: column !important;
+  }
+
+  .blog-five,
+  .project-five {
+    margin: 0 1rem !important;
+    width: auto !important;
+  }
+}
+
+/* media queries */

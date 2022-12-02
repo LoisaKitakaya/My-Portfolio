@@ -106,7 +106,7 @@ const Project = () => {
   if (loading)
     return (
       <div className="h-full w-full">
-        <div className="mx-16 p-4">
+        <div className="mx-16 p-4 project-one">
           {/* navbar */}
           <Navbar navs={navs} />
           {/* navbar */}
@@ -126,7 +126,7 @@ const Project = () => {
     return (
       <div className="h-full w-fit mx-auto mt-36">
         <div
-          className="rounded-md shadow-md border border-zinc-300 bg-white m-4 w-fit py-36"
+          className="rounded-md shadow-md border border-zinc-300 bg-white m-4 w-fit py-36 project-five"
           style={{
             width: "800px",
           }}
@@ -143,17 +143,17 @@ const Project = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="mx-16 p-4">
+      <div className="mx-16 p-4 project-one">
         {/* navbar */}
         <Navbar navs={navs} />
         {/* navbar */}
         <hr className="border-1 border-zinc-500 my-4" />
         {/* body */}
-        <div className="flex justify-between">
+        <div className="flex justify-between project-four">
           {/* article */}
           <div>
             <div
-              className="rounded-md shadow-md border border-zinc-300 bg-white m-4 w-fit"
+              className="rounded-md shadow-md border border-zinc-300 bg-white m-4 w-fit project-three"
               style={{
                 width: "800px",
               }}

@@ -1,6 +1,6 @@
 const SocialMedia = () => {
   return (
-    <div className="flex items-center">
+    <div className="flex items-center navbar-sm">
       <a href="https://twitter.com/FreedomLoisa">
         <i className="bi bi-twitter text-sky-500 text-xl ml-4"></i>
       </a>

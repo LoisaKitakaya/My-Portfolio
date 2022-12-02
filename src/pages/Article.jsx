@@ -110,7 +110,7 @@ const Article = () => {
   if (loading)
     return (
       <div className="h-full w-full">
-        <div className="mx-16 p-4">
+        <div className="mx-16 p-4 blog-one">
           {/* navbar */}
           <Navbar navs={navs} />
           {/* navbar */}
@@ -130,7 +130,7 @@ const Article = () => {
     return (
       <div className="h-full w-fit mx-auto mt-36">
         <div
-          className="rounded-md shadow-md border border-zinc-300 bg-white m-4 w-fit py-36"
+          className="rounded-md shadow-md border border-zinc-300 bg-white m-4 w-fit py-36 blog-five"
           style={{
             width: "800px",
           }}
@@ -145,17 +145,17 @@ const Article = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="mx-16 p-4">
+      <div className="mx-16 p-4 blog-one">
         {/* navbar */}
         <Navbar navs={navs} />
         {/* navbar */}
         <hr className="border-1 border-zinc-500 my-4" />
         {/* body */}
-        <div className="flex justify-between">
+        <div className="flex justify-between blog-four">
           {/* article */}
           <div>
             <div
-              className="rounded-md shadow-md border border-zinc-300 bg-white m-4 w-fit"
+              className="rounded-md shadow-md border border-zinc-300 bg-white m-4 w-fit blog-three"
               style={{
                 width: "800px",
               }}

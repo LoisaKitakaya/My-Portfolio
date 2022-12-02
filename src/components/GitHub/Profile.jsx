@@ -2,7 +2,7 @@ const Profile = ({ myProfile }) => {
   return (
     <div className="mx-2">
       <img
-        className="rounded-md shadow-md w-2/5 border border-zinc-300"
+        className="rounded-md shadow-md w-2/5 border border-zinc-300 git-four"
         src={myProfile.avatar_url}
         alt="avatar"
       />

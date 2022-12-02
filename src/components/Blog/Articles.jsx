@@ -76,7 +76,10 @@ const Articles = () => {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-center text-4xl text-zinc-500 py-4" id="blog-top">
+        <h1
+          className="text-center text-4xl text-zinc-500 py-4 blog-two"
+          id="blog-top"
+        >
           All articles
         </h1>
         {currentPosts.map((article, index) => {
@@ -94,7 +97,7 @@ const Articles = () => {
                 }}
               >
                 <div
-                  className="rounded-md shadow-md border border-zinc-300 bg-white m-4 w-fit"
+                  className="rounded-md shadow-md border border-zinc-300 bg-white m-4 w-fit blog-three"
                   style={{
                     width: "800px",
                   }}
