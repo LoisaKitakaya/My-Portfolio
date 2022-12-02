@@ -118,7 +118,7 @@ const ProjectList = ({ category }) => {
                     </div>
                     <p className="mb-4 text-lg">{project.intro}</p>
                     <hr className="my-4 border border-zinc-300" />
-                    <div className="flex items-center">
+                    <div className="flex items-center flex-wrap">
                       {project.labels.map((item, index) => {
                         const list = (
                           <>

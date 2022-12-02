@@ -200,7 +200,7 @@ const Project = () => {
 
           {/* article details */}
           <div className="mx-4">
-            <div className="p-4 my-4 border border-zinc-300 shadow-md mx-auto w-80 rounded-md bg-white h-fit">
+            <div className="p-4 my-4 border border-zinc-300 shadow-md mx-auto w-80 rounded-md bg-white h-fit project-six">
               <div className="flex flex-col items-center">
                 <img
                   className="rounded-full mb-2"
