@@ -166,7 +166,8 @@ code {
     width: auto !important;
   }
 
-  .blog-six, .project-siz {
+  .blog-six,
+  .project-six {
     width: auto !important;
   }
 }
