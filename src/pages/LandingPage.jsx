@@ -24,6 +24,13 @@ const LandingPage = () => {
       <div className="flex items-center justify-evenly w-2/4 mx-auto landing-nav">
         <Link
           to="/about"
+          onClick={() => {
+            const element = document.getElementById("root");
+
+            element.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
           className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center landing-nav-btn"
         >
           <span className="text-lg text-zinc-600">About</span>
@@ -44,6 +51,13 @@ const LandingPage = () => {
         </Link>
         <Link
           to="/stats"
+          onClick={() => {
+            const element = document.getElementById("root");
+
+            element.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
           className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center landing-nav-btn"
         >
           <span className="text-lg text-zinc-600">Git stats</span>
@@ -64,6 +78,13 @@ const LandingPage = () => {
         </Link>
         <Link
           to="/blog"
+          onClick={() => {
+            const element = document.getElementById("root");
+
+            element.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
           className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center landing-nav-btn"
         >
           <span className="text-lg text-zinc-600">Blog</span>
@@ -84,6 +105,13 @@ const LandingPage = () => {
         </Link>
         <Link
           to="/projects"
+          onClick={() => {
+            const element = document.getElementById("root");
+
+            element.scrollIntoView({
+              behavior: "smooth",
+            });
+          }}
           className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center landing-nav-btn"
         >
           <span className="text-lg text-zinc-600">Projects</span>

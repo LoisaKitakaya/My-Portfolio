@@ -90,12 +90,12 @@ code {
 
   .landing-nav-btn {
     width: 100% !important;
-    margin: 1rem 0 !important;
+    margin: 1rem auto !important;
     justify-content: center !important;
   }
 
   .about-one {
-    flex-direction: column !important;
+    flex-direction: column-reverse !important;
   }
 
   .about-zero {
@@ -158,6 +158,12 @@ code {
   .blog-four,
   .project-four {
     flex-direction: column !important;
+  }
+
+  .blog-five,
+  .project-five {
+    margin: 0 1rem !important;
+    width: auto !important;
   }
 }
 

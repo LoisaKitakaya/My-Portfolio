@@ -59,7 +59,45 @@ const Navbar = ({ navs }) => {
       >
         <div className="flex items-center justify-evenly w-2/4 mx-auto landing-nav mt-24">
           <Link
+            to="/"
+            onClick={() => {
+              setOpened(false);
+
+              const element = document.getElementById("root");
+
+              element.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+            className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center landing-nav-btn"
+          >
+            <span className="text-lg text-zinc-600">Home</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-5 h-5 text-rose-500"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+              />
+            </svg>
+          </Link>
+          <Link
             to="/about"
+            onClick={() => {
+              setOpened(false);
+
+              const element = document.getElementById("root");
+
+              element.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
             className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center landing-nav-btn"
           >
             <span className="text-lg text-zinc-600">About</span>
@@ -80,6 +118,15 @@ const Navbar = ({ navs }) => {
           </Link>
           <Link
             to="/stats"
+            onClick={() => {
+              setOpened(false);
+
+              const element = document.getElementById("root");
+
+              element.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
             className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center landing-nav-btn"
           >
             <span className="text-lg text-zinc-600">Git stats</span>
@@ -100,6 +147,15 @@ const Navbar = ({ navs }) => {
           </Link>
           <Link
             to="/blog"
+            onClick={() => {
+              setOpened(false);
+
+              const element = document.getElementById("root");
+
+              element.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
             className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center landing-nav-btn"
           >
             <span className="text-lg text-zinc-600">Blog</span>
@@ -120,6 +176,15 @@ const Navbar = ({ navs }) => {
           </Link>
           <Link
             to="/projects"
+            onClick={() => {
+              setOpened(false);
+              
+              const element = document.getElementById("root");
+
+              element.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
             className="button py-1 px-4 bg-white hover:bg-zinc-100 rounded-md shadow-md border border-zinc-300 duration-200 ease-linear flex items-center landing-nav-btn"
           >
             <span className="text-lg text-zinc-600">Projects</span>
