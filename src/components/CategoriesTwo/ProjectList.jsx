@@ -70,7 +70,7 @@ const ProjectList = ({ category }) => {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-center text-4xl text-zinc-500 py-4" id="blog-top">
+        <h1 className="text-center text-4xl text-zinc-500 py-4 project-two" id="blog-top">
           {category} Projects
         </h1>
         {currentPosts.map((project, index) => {
@@ -88,7 +88,7 @@ const ProjectList = ({ category }) => {
                 }}
               >
                 <div
-                  className="rounded-md shadow-md border border-zinc-300 bg-white m-4 w-fit"
+                  className="rounded-md shadow-md border border-zinc-300 bg-white m-4 w-fit project-three"
                   style={{
                     width: "800px",
                   }}

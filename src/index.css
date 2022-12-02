@@ -85,7 +85,7 @@ code {
   }
 
   .landing-nav {
-   flex-direction: column !important;
+    flex-direction: column !important;
   }
 
   .landing-nav-btn {
@@ -96,7 +96,6 @@ code {
 
   .about-one {
     flex-direction: column !important;
-
   }
 
   .about-zero {
@@ -138,6 +137,27 @@ code {
 
   .git-four {
     width: auto !important;
+  }
+
+  .blog-one,
+  .project-one {
+    margin: 0 !important;
+  }
+
+  .blog-two,
+  .project-two {
+    text-align: left !important;
+  }
+
+  .blog-three,
+  .project-three {
+    width: auto !important;
+    margin: 1rem 0 !important;
+  }
+
+  .blog-four,
+  .project-four {
+    flex-direction: column !important;
   }
 }
 
