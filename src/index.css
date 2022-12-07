@@ -58,6 +58,16 @@ code {
   border-radius: 0.5rem;
 }
 
+.article-content a {
+  color: rgb(2 132 199) !important;
+  text-decoration: underline !important;
+}
+
+.article-content a:hover {
+  color: rgb(12 74 110) !important;
+  text-decoration: underline !important;
+}
+
 /* media queries */
 
 @media screen and (max-width: 480px) {
