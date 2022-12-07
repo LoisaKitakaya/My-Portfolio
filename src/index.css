@@ -59,13 +59,43 @@ code {
   font-size: 16px !important;
 }
 
-.article-content a {
+.article-content a,
+.project-content a {
   color: rgb(2 132 199) !important;
   text-decoration: underline !important;
 }
 
-.article-content a:hover {
+.article-content a:hover,
+.project-content a:hover {
   color: rgb(12 74 110) !important;
+  text-decoration: underline !important;
+}
+
+.article-content ul,
+.project-content ul,
+.article-content ol,
+.project-content ol {
+  list-style: disc !important;
+  padding-left: 2rem !important;
+}
+
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6,
+.project-content h1,
+.project-content h2,
+.project-content h3,
+.project-content h4,
+.project-content h5,
+.project-content h6 {
+  font-weight: bold !important;
+}
+
+.article-content h1,
+.project-content h1 {
   text-decoration: underline !important;
 }
 
