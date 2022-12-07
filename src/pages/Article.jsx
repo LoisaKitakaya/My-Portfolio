@@ -171,7 +171,7 @@ const Article = () => {
               />
               <div className="p-4">
                 <div
-                  className="mb-4 text-lg"
+                  className="mb-4 text-lg article-content"
                   dangerouslySetInnerHTML={{
                     __html: data.codingBlog.article.html,
                   }}
