@@ -169,7 +169,7 @@ const Project = () => {
               />
               <div className="p-4">
                 <div
-                  className="mb-4 text-lg"
+                  className="mb-4 text-lg project-content"
                   dangerouslySetInnerHTML={{
                     __html: data.projectBlog.article.html,
                   }}
