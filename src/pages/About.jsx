@@ -223,14 +223,14 @@ const About = () => {
             </ul>
             <h4 className="text-4xl mb-4">Miscellaneous</h4>
             <a
-              href="https://res.cloudinary.com/dit0fii18/image/upload/v1664124091/documents/Resume_-_Freedom_Loisa_w3xg3a.pdf"
+              href="https://res.cloudinary.com/dit0fii18/image/upload/v1676616526/documents/CV_Freedom_Loisa_lfjwec.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-700 text-lg"
             >
               Resume
             </a>
-            <div className="about-resume"/>
+            <div className="about-resume" />
           </div>
           <div className="flex flex-col w-fit">
             {about.images.map((pic, index) => {
